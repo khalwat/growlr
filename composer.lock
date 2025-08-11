@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21b5a8bae463170c26fc5c5747e966bd",
+    "content-hash": "8903095e698cc1258bfb39667d358d6d",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2870,6 +2870,238 @@
                 }
             ],
             "time": "2025-07-28T21:50:37+00:00"
+        },
+        {
+            "name": "nystudio107/craft-plugin-vite",
+            "version": "5.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-plugin-vite.git",
+                "reference": "023ea9013f03ac8b15c9b800c66943ce4d02cf48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-plugin-vite/zipball/023ea9013f03ac8b15c9b800c66943ce4d02cf48",
+                "reference": "023ea9013f03ac8b15c9b800c66943ce4d02cf48",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0"
+            },
+            "require-dev": {
+                "craftcms/ecs": "dev-main",
+                "craftcms/phpstan": "dev-main",
+                "craftcms/rector": "dev-main"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\pluginvite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com"
+                }
+            ],
+            "description": "Plugin Vite is the conduit between Craft CMS plugins and Vite, with manifest.json & HMR support",
+            "keywords": [
+                "craftcms",
+                "plugin",
+                "vite"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-plugin-vite/blob/v5/README.md",
+                "issues": "https://github.com/nystudio107/craft-plugin-vite/issues",
+                "source": "https://github.com/nystudio107/craft-plugin-vite/tree/5.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khalwat",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-08-14T02:02:01+00:00"
+        },
+        {
+            "name": "nystudio107/craft-twig-base-templates",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-twig-base-templates.git",
+                "reference": "a63c4b94d542daf0a451892f3d240101e0badd77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-twig-base-templates/zipball/a63c4b94d542daf0a451892f3d240101e0badd77",
+                "reference": "a63c4b94d542daf0a451892f3d240101e0badd77",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "*",
+                "nystudio107/twig-bundle-installer": "^1.0.0"
+            },
+            "type": "twig-bundle",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Craft CMS Twig base templates",
+            "homepage": "https://nystudio107.com",
+            "keywords": [
+                "bundle",
+                "composer",
+                "installer",
+                "twig",
+                "twig-bundle"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-twig-base-templates",
+                "email": "info@nystudio107.com",
+                "issues": "https://github.com/nystudio107/craft-twig-base-templates/issues",
+                "source": "https://github.com/nystudio107/craft-twig-base-templates"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khalwat",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-22T19:48:54+00:00"
+        },
+        {
+            "name": "nystudio107/craft-vite",
+            "version": "5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-vite.git",
+                "reference": "a2eaa9beb4abf1add99e8fc7892e8df57c6b49e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-vite/zipball/a2eaa9beb4abf1add99e8fc7892e8df57c6b49e8",
+                "reference": "a2eaa9beb4abf1add99e8fc7892e8df57c6b49e8",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0",
+                "nystudio107/craft-plugin-vite": "^5.0.2",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "craftcms/cloud": "^2.0.0",
+                "craftcms/ecs": "dev-main",
+                "craftcms/phpstan": "dev-main",
+                "craftcms/rector": "dev-main"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Vite",
+                "class": "nystudio107\\vite\\Vite",
+                "handle": "vite",
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-vite/v5/CHANGELOG.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\vite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com"
+                }
+            ],
+            "description": "Allows the use of the Vite.js next generation frontend tooling with Craft CMS",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "vite"
+            ],
+            "support": {
+                "docs": "https://nystudio107.com/docs/vite/",
+                "issues": "https://nystudio107.com/plugins/vite/support",
+                "source": "https://github.com/nystudio107/craft-vite"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khalwat",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-08-14T02:05:18+00:00"
+        },
+        {
+            "name": "nystudio107/twig-bundle-installer",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/twig-bundle-installer.git",
+                "reference": "7305c2a9b2d30bec4bd90cc3a1aeaec2e6e7d4f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/twig-bundle-installer/zipball/7305c2a9b2d30bec4bd90cc3a1aeaec2e6e7d4f7",
+                "reference": "7305c2a9b2d30bec4bd90cc3a1aeaec2e6e7d4f7",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0 || ^2.0",
+                "craftcms/ecs": "dev-main",
+                "phpstan/phpstan": "^1.4.6"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "nystudio107\\composer\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Install, update, and manage Twig template bundles via Composer",
+            "homepage": "https://nystudio107.com",
+            "keywords": [
+                "bundle",
+                "composer",
+                "craftcms",
+                "drupal",
+                "installer",
+                "symphony",
+                "twig"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/twig-bundle-installer",
+                "email": "info@nystudio107.com",
+                "issues": "https://github.com/nystudio107/twig-bundle-installer/issues",
+                "source": "https://github.com/nystudio107/twig-bundle-installer"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khalwat",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-09-07T18:32:15+00:00"
         },
         {
             "name": "oscarotero/html-parser",

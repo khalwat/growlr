@@ -13,16 +13,16 @@ previewTargets:
         - label
         - 'Primary entry page'
       -
-        - refresh
-        - '1'
-      -
         - urlFormat
         - '{url}'
+      -
+        - refresh
+        - '1'
 propagationMethod: all
 siteSettings:
   88a82adb-74b9-4d14-b4bf-8e9a26d20d3e: # Growlr
     enabledByDefault: true
     hasUrls: true
-    template: homepage/_entry.twig
+    template: index.twig
     uriFormat: __home__
 type: single
