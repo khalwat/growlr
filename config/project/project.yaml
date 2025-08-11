@@ -1,0 +1,86 @@
+dateModified: 1754938812
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: singles
+      tableAttributes:
+        - status
+        - link
+      type: native
+    -
+      heading: Creatures
+      key: 'heading:17e86486-65f3-4070-82a3-97dc968c620b'
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:f8481c59-9880-41e3-b231-24ae565d2264' # Pawmates
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+email:
+  fromEmail: ryan@craftquest.io
+  fromName: 'Craft CMS Vite Tailwind'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  local:
+    hasUrls: true
+    name: Local
+    settings:
+      path: $CRAFT_ASSET_BASE_PATH
+    type: craft\fs\Local
+    url: $CRAFT_ASSET_BASE_URL
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+meta:
+  __names__:
+    0a5b2601-741b-4839-913a-3a37631eabd3: Lightswitch # Lightswitch
+    1f57f4bb-af34-4cda-8fc3-858845ff8aa4: Animals # Animals
+    29c24dbb-b55b-4ebb-8124-fcfa3d0be193: Sex # Sex
+    38f286df-6270-459e-b2a6-8f01c3f86edd: Homepage # Homepage
+    45a00e92-2550-47ce-b789-33064e5da296: 'Craft CMS Vite Tailwind' # Craft CMS Vite Tailwind
+    83aa7052-99d6-437a-ba10-fa6ac32b58b7: Image # Image
+    88a82adb-74b9-4d14-b4bf-8e9a26d20d3e: Growlr # Growlr
+    94fc764c-b04d-4b16-8d91-1251539daa79: Number # Number
+    20349c5d-8911-4cfc-b49c-7dc36eeb62de: 'Page Modules' # Page Modules
+    360356d7-7d36-4cf2-a063-ebf63125cc00: Pawmates # Pawmates
+    ae845a83-cc97-41f2-933f-39acb00facae: 'Attribute Slider' # Attribute Slider
+    e27725a4-1f5e-4cb7-a977-8aaa9f8146b9: 'Page Builder' # Page Builder
+    ea52da8a-d461-4389-b35d-295b468d26ec: 'Page Builder' # Page Builder
+    f9c132da-5a84-4041-9cd1-5badb98df027: 'Plain Text' # Plain Text
+    f8481c59-9880-41e3-b231-24ae565d2264: Pawmates # Pawmates
+plugins:
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: Growlr
+  retryDuration: null
+  schemaVersion: 5.8.0.3
+  timeZone: $TZ
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

@@ -1,0 +1,24 @@
+/**
+ * app.css
+ *
+ * The entry point for the css.
+ *
+ */
+
+@import "./tailwind-config.css";
+@import "./components/webfonts.css";
+@import "./components/typography.css";
+@import "./components/global.css";
+
+/**
+ * Include styles for individual pages
+ *
+ */
+@import "./pages/settings.css";
+@import "./pages/welcome.css";
+
+/**
+ * Include vendor css.
+ *
+ */
+@import "./vendor.css";

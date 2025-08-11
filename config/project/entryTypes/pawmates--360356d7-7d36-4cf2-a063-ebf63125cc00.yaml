@@ -1,0 +1,281 @@
+color: green
+description: null
+fieldLayouts:
+  83f969c2-af9c-446c-9386-344e61e04697:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-26T00:46:42+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: Name
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 1a02d34b-3667-4a8f-9b89-2b8dafdba3ee
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-26T00:58:08+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 94fc764c-b04d-4b16-8d91-1251539daa79 # Number
+            handle: age
+            includeInCards: false
+            instructions: null
+            label: Age
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec3a66a7-84f6-4d7a-85d9-8bcb3b3b531e
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-26T00:58:08+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 29c24dbb-b55b-4ebb-8124-fcfa3d0be193 # Sex
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b77c3d63-b216-4288-8a42-20da3df3750a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-26T00:58:08+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 0a5b2601-741b-4839-913a-3a37631eabd3 # Lightswitch
+            handle: neutered
+            includeInCards: false
+            instructions: null
+            label: Neutered
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ca1a21c-b29e-4b60-807e-02334f79818b
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-26T00:58:08+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f9c132da-5a84-4041-9cd1-5badb98df027 # Plain Text
+            handle: shortDescription
+            includeInCards: false
+            instructions: null
+            label: 'Short Description'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9ef533ee-5483-4028-bb5e-1e952b04874c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-26T00:58:08+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 83aa7052-99d6-437a-ba10-fa6ac32b58b7 # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0a444691-aa81-4e8b-b3af-3c1119e2ea77
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            elementCondition: null
+            heading: Attributes
+            type: craft\fieldlayoutelements\Heading
+            uid: 072cb3d9-594a-4478-8ab6-d48233d5c0ab
+            userCondition: null
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
+            handle: affection
+            includeInCards: false
+            instructions: null
+            label: Affection
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7967d421-353a-4321-803c-186bc8dafdf8
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
+            handle: activityLevel
+            includeInCards: false
+            instructions: null
+            label: 'Activity Level'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd12bed9-3a23-45ab-b243-4a4c1cc1cbaa
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
+            handle: bodySize
+            includeInCards: false
+            instructions: null
+            label: 'Body Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d57c505d-6dcf-4aff-af6c-53a4ab0fc486
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
+            handle: clingyness
+            includeInCards: false
+            instructions: null
+            label: Clingyness
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 951ef72d-55cc-4e0d-8bf4-0a22685456e4
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
+            handle: hairyness
+            includeInCards: false
+            instructions: null
+            label: Hairyness
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dbdeb7b3-0f32-4819-ae12-8ae63a74f497
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
+            handle: diet
+            includeInCards: false
+            instructions: null
+            label: Diet
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e664588c-e2dd-465e-91a9-87bffa8d767c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
+            handle: vibe
+            includeInCards: false
+            instructions: null
+            label: Vibe
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ae86a0b9-66fb-4a90-b586-d4c2c8b9922a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-29T01:54:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
+            handle: attractiveness
+            includeInCards: false
+            instructions: null
+            label: Attractiveness
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: facda6a8-6d50-4687-acdd-8a79356b701c
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: befcc8f4-2c45-4b5e-af7b-705c6a8df5f4
+        userCondition: null
+handle: pawmates
+hasTitleField: true
+icon: paw
+name: Pawmates
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

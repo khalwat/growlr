@@ -1,0 +1,14 @@
+columnSuffix: null
+handle: attributeSlider
+instructions: null
+name: 'Attribute Slider'
+searchable: false
+settings:
+  defaultValue: 0
+  max: 10
+  min: 0
+  step: 1
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Range
