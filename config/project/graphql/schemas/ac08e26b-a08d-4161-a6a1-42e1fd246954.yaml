@@ -1,0 +1,25 @@
+isPublic: false
+name: Growlr
+scope:
+  - 'sites.88a82adb-74b9-4d14-b4bf-8e9a26d20d3e:read' # Growlr
+  - 'elements.drafts:read'
+  - 'elements.revisions:read'
+  - 'elements.inactive:read'
+  - 'sections.38f286df-6270-459e-b2a6-8f01c3f86edd:read' # Homepage
+  - 'sections.f8481c59-9880-41e3-b231-24ae565d2264:read' # Pawmates
+  - 'nestedentryfields.ea52da8a-d461-4389-b35d-295b468d26ec:read' # Page Builder
+  - 'volumes.1f57f4bb-af34-4cda-8fc3-858845ff8aa4:read' # Animals
+  - 'usergroups.everyone:read'
+  - 'sections.38f286df-6270-459e-b2a6-8f01c3f86edd:save' # Homepage
+  - 'sections.f8481c59-9880-41e3-b231-24ae565d2264:edit' # Pawmates
+  - 'sections.f8481c59-9880-41e3-b231-24ae565d2264:create' # Pawmates
+  - 'sections.f8481c59-9880-41e3-b231-24ae565d2264:save' # Pawmates
+  - 'sections.f8481c59-9880-41e3-b231-24ae565d2264:delete' # Pawmates
+  - 'nestedentryfields.ea52da8a-d461-4389-b35d-295b468d26ec:edit' # Page Builder
+  - 'nestedentryfields.ea52da8a-d461-4389-b35d-295b468d26ec:create' # Page Builder
+  - 'nestedentryfields.ea52da8a-d461-4389-b35d-295b468d26ec:save' # Page Builder
+  - 'nestedentryfields.ea52da8a-d461-4389-b35d-295b468d26ec:delete' # Page Builder
+  - 'volumes.1f57f4bb-af34-4cda-8fc3-858845ff8aa4:edit' # Animals
+  - 'volumes.1f57f4bb-af34-4cda-8fc3-858845ff8aa4:create' # Animals
+  - 'volumes.1f57f4bb-af34-4cda-8fc3-858845ff8aa4:save' # Animals
+  - 'volumes.1f57f4bb-af34-4cda-8fc3-858845ff8aa4:delete' # Animals

@@ -1,2 +1,21 @@
 // Import our CSS
 import '@/css/app.css';
+
+import App from '@/vue/App.vue';
+import { createApp } from 'vue';
+import '../css/components/v-dropdown-menu.css';
+
+// App main
+const main = async () => {
+        // Create our vue instance
+        const app = createApp(App);
+        // Mount the app
+        const root = app.mount('#app-container');
+
+        return root;
+};
+
+// Execute async function
+main().then( () => {
+        console.log();
+});

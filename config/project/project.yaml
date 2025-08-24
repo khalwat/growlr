@@ -1,4 +1,4 @@
-dateModified: 1754945023
+dateModified: 1756072301
 elementSources:
   craft\elements\Entry:
     -
@@ -44,13 +44,10 @@ fs:
       path: $CRAFT_ASSET_BASE_PATH
     type: craft\fs\Local
     url: $CRAFT_ASSET_BASE_URL
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 meta:
   __names__:
     0a5b2601-741b-4839-913a-3a37631eabd3: Lightswitch # Lightswitch
+    0f7822f0-84c2-4b34-af33-65e860071604: 'Public Schema' # Public Schema
     1f57f4bb-af34-4cda-8fc3-858845ff8aa4: Animals # Animals
     29c24dbb-b55b-4ebb-8124-fcfa3d0be193: Sex # Sex
     38f286df-6270-459e-b2a6-8f01c3f86edd: Homepage # Homepage
@@ -60,6 +57,7 @@ meta:
     94fc764c-b04d-4b16-8d91-1251539daa79: Number # Number
     20349c5d-8911-4cfc-b49c-7dc36eeb62de: 'Page Modules' # Page Modules
     360356d7-7d36-4cf2-a063-ebf63125cc00: Pawmates # Pawmates
+    ac08e26b-a08d-4161-a6a1-42e1fd246954: Growlr # Growlr
     ae845a83-cc97-41f2-933f-39acb00facae: 'Attribute Slider' # Attribute Slider
     e27725a4-1f5e-4cb7-a977-8aaa9f8146b9: 'Page Builder' # Page Builder
     ea52da8a-d461-4389-b35d-295b468d26ec: 'Page Builder' # Page Builder
@@ -71,7 +69,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
 system:
-  edition: solo
+  edition: pro
   live: true
   name: Growlr
   retryDuration: null

@@ -23,6 +23,11 @@ export default defineConfig(({command}) => ({
     },
     sourcemap: true
   },
+  optimizeDeps: {
+    include: [
+      'v-dropdown-menu',
+    ],
+  },
   plugins: [
     ViteRestart({
       reload: [
