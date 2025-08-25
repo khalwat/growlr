@@ -1,17 +1,8 @@
-{% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
-
-{% block headScripts %}
-    {{ craft.vite.script("src/js/app.ts") }}
-{% endblock headScripts %}
-
-{% block headLinks %}
-{% endblock %}
+{% extends "layouts/growlr-base.twig" %}
 
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
-    {{ craft.vite.integrity("src/js/app.ts") }}
-
-    <div id="app-container"></div>
+    {{ parent() }}
     <section>
         <h3>preContent</h3>
     </section>
@@ -23,9 +14,6 @@
             <h1>{{ entry.title }}</h1>
             <h3>content</h3>
         </section>
-
-        </pre>
-
     {% endblock %}
 
     {# -- Content that appears after the primary content block -- #}

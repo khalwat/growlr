@@ -6,12 +6,12 @@ const main = async () => {
     // Create our vue instance
     const app = createApp(App);
     // Mount the app
-    const root = app.mount('#app-container');
+    const root = app.mount('#confetti-container');
 
     return root;
 };
 
 // Execute async function
 main().then( () => {
-    console.log();
+    console.log('confetti-container mounted');
 });

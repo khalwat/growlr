@@ -17,16 +17,12 @@ export default defineConfig(({command}) => ({
     outDir: '../web/dist',
     rollupOptions: {
       input: {
-        app: 'src/js/app.ts',
-        welcome: 'src/js/welcome.ts',
+        'app': 'src/js/app.ts',
+        'welcome': 'src/js/welcome.ts',
+        'users-menu': 'src/js/welcome.ts',
       },
     },
     sourcemap: true
-  },
-  optimizeDeps: {
-    include: [
-      'v-dropdown-menu',
-    ],
   },
   plugins: [
     ViteRestart({

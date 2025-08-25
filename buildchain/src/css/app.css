@@ -7,6 +7,7 @@
 
 @import "./tailwind-config.css";
 @import "./components/webfonts.css";
+@import "./components/dropdown.css";
 @import "./components/typography.css";
 @import "./components/global.css";
 

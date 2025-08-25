@@ -7,3 +7,4 @@
 
 @import "tailwindcss";
 @source "../../../src/templates";
+@source "../../node_modules/v-dropdown-menu";

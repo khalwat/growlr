@@ -22,6 +22,7 @@ export default {
         ]
       }
     ],
+    "declaration-block-single-line-max-declarations": null,
     "no-invalid-position-at-import-rule": null,
     "block-no-empty": null,
     "selector-id-pattern": null,

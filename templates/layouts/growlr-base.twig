@@ -1,0 +1,10 @@
+{% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
+
+{% block headScripts %}
+    {{ craft.vite.script("src/js/app.ts") }}
+    {{ craft.vite.script("src/js/users-menu.ts") }}
+{% endblock headScripts %}
+
+{% block preContent %}
+    <div id="users-menu-container"></div>
+{% endblock preContent %}
