@@ -1,5 +1,5 @@
 <template>
-  <dropdown-menu>
+  <dropdown-menu direction="right">
     <template #trigger>
       <button class="text-2xl">🤦🏻</button>
     </template>
