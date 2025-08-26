@@ -9,7 +9,7 @@
     <template #body>
       <ul>
         <li v-for="user in users.data" :key="1">
-          <a href="">{{ user.username }}</a>
+          <a :href="'/users/' + user.id">{{ user.username }}</a>
         </li>
       </ul>
     </template>
