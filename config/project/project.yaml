@@ -1,4 +1,4 @@
-dateModified: 1756072301
+dateModified: 1756243823
 elementSources:
   craft\elements\Entry:
     -
@@ -55,10 +55,12 @@ meta:
     83aa7052-99d6-437a-ba10-fa6ac32b58b7: Image # Image
     88a82adb-74b9-4d14-b4bf-8e9a26d20d3e: Growlr # Growlr
     94fc764c-b04d-4b16-8d91-1251539daa79: Number # Number
+    704b861d-3b0b-4a66-bb5b-6e487e11ab58: People # People
     20349c5d-8911-4cfc-b49c-7dc36eeb62de: 'Page Modules' # Page Modules
     360356d7-7d36-4cf2-a063-ebf63125cc00: Pawmates # Pawmates
     ac08e26b-a08d-4161-a6a1-42e1fd246954: Growlr # Growlr
     ae845a83-cc97-41f2-933f-39acb00facae: 'Attribute Slider' # Attribute Slider
+    b25edf3a-f5a9-4b45-a329-9525ef339500: Site # Site
     e27725a4-1f5e-4cb7-a977-8aaa9f8146b9: 'Page Builder' # Page Builder
     ea52da8a-d461-4389-b35d-295b468d26ec: 'Page Builder' # Page Builder
     f9c132da-5a84-4041-9cd1-5badb98df027: 'Plain Text' # Plain Text
@@ -75,10 +77,3 @@ system:
   retryDuration: null
   schemaVersion: 5.8.0.3
   timeZone: $TZ
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  require2fa: false
-  requireEmailVerification: true

@@ -185,23 +185,6 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
-            handle: clingyness
-            includeInCards: false
-            instructions: null
-            label: Clingyness
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 951ef72d-55cc-4e0d-8bf4-0a22685456e4
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-07-29T01:54:48+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
             handle: hairyness
             includeInCards: false
             instructions: null
@@ -228,23 +211,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e664588c-e2dd-465e-91a9-87bffa8d767c
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-07-29T01:54:48+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: ae845a83-cc97-41f2-933f-39acb00facae # Attribute Slider
-            handle: vibe
-            includeInCards: false
-            instructions: null
-            label: Vibe
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: ae86a0b9-66fb-4a90-b586-d4c2c8b9922a
             userCondition: null
             warning: null
             width: 50
