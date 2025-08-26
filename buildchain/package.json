@@ -11,6 +11,7 @@
     "axios": "^1.11.0",
     "meow": "^9.0.0",
     "v-dropdown-menu": "^2.0.4",
+    "vue-final-modal": "^4.5.5",
     "vue-3-slider-component": "^1.0.2",
     "vue": "^3.2.0",
     "vue-confetti": "^2.0.8"
