@@ -4,22 +4,18 @@
 {% block preContent %}
     {{ parent() }}
     <section>
-        <h3>preContent</h3>
     </section>
 {% endblock %}
 
     {# -- Primary content block -- #}
     {% block content %}
         <section>
-            <h1>{{ entry.title }}</h1>
-            <h3>content</h3>
         </section>
     {% endblock %}
 
     {# -- Content that appears after the primary content block -- #}
     {% block postContent %}
         <section>
-            <h3>postContent</h3>
         </section>
     {% endblock %}
 

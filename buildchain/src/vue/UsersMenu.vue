@@ -1,7 +1,7 @@
 <template>
   <dropdown-menu direction="right">
     <template #trigger>
-      <button class="text-2xl">🤦🏻</button>
+      <button class="pt-3 px-2"><img width="32px" height="auto" src="/img/dog-nose.png"></button>
     </template>
 
     <template #header> </template>
