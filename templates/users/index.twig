@@ -1,5 +1,10 @@
 {% extends "layouts/growlr-base.twig" %}
 
+{% block headScripts %}
+    {{ parent() }}
+    {{ craft.vite.script("src/js/pawmate-finder.ts") }}
+{% endblock headScripts %}
+
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
     {{ parent() }}
@@ -10,6 +15,10 @@
     {# -- Primary content block -- #}
     {% block content %}
         <section>
+            <div id="pawmate-finder-container">
+                <pawmate-finder :id="{{ userId }}">
+                </pawmate-finder>
+            </div>
         </section>
     {% endblock %}
 

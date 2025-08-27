@@ -1,10 +1,10 @@
 <template>
-  <dropdown-menu direction="right">
+  <dropdown-menu direction="right" class="custom-style" transition="zoom">
     <template #trigger>
       <button class="pt-3 px-2"><img width="32px" height="auto" src="/img/dog-nose.png"></button>
     </template>
 
-    <template #header> </template>
+    <template #header> Pick a Human </template>
 
     <template #body>
       <ul>

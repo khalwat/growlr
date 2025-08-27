@@ -20,6 +20,7 @@ export default defineConfig(({command}) => ({
         'app': 'src/js/app.ts',
         'welcome': 'src/js/welcome.ts',
         'users-menu': 'src/js/welcome.ts',
+        'pawmate-finder': 'src/js/pawmate-finder.ts',
       },
     },
     sourcemap: true
