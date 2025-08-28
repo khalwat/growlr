@@ -3,7 +3,6 @@ import checker from 'vite-plugin-checker';
 import manifestSRI from 'vite-plugin-manifest-sri';
 import tailwindcss from "@tailwindcss/vite";
 import vue from '@vitejs/plugin-vue'
-import ViteRestart from 'vite-plugin-restart';
 import {visualizer} from 'rollup-plugin-visualizer';
 import viteCompression from 'vite-plugin-compression';
 import * as path from 'path';
@@ -26,11 +25,6 @@ export default defineConfig(({command}) => ({
     sourcemap: true
   },
   plugins: [
-    ViteRestart({
-      reload: [
-        '../templates/**/*',
-      ],
-    }),
     vue(),
     manifestSRI(),
     viteCompression({
