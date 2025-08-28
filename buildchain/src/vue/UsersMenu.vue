@@ -21,22 +21,13 @@
 <script lang="ts" setup>
 import DropdownMenu from 'v-dropdown-menu';
 import {executeQuery} from '../js/gql-query';
-import {reactive} from "vue";
-import {AxiosResponse} from "axios";
-
-const usersQuery =
-  `
-  query searchQuery($limit: Int) {
-    users(limit: $limit) {
-      id
-      username
-    }
-  }
-`;
+import {reactive} from 'vue';
+import {AxiosResponse} from 'axios';
+import AllUsersQuery from '../gql/all-users-query.gql?raw';
 
 const users = reactive({});
 
-executeQuery(usersQuery, {limit: null}, (response: AxiosResponse) => {
+executeQuery(AllUsersQuery, {limit: null}, (response: AxiosResponse) => {
   if (response.data) {
     Object.assign(users, response.data.data.users)
   }

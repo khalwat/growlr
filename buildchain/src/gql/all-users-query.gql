@@ -1,0 +1,6 @@
+query AllUsersQuery($limit: Int) {
+    users(limit: $limit) {
+        id
+        username
+    }
+}

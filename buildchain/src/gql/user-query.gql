@@ -1,0 +1,18 @@
+query UserQuery($id: [QueryArgument]) {
+    users(limit: 1, id: $id) {
+        ... on User {
+            id
+            username
+            fullName
+            photo {
+                url
+            }
+            affection
+            activityLevel
+            bodySize
+            hairyness
+            diet
+            attractiveness
+        }
+    }
+}

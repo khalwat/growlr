@@ -61,37 +61,17 @@
 
 <script lang="ts" setup>
 import {executeQuery} from '../js/gql-query';
-import {defineProps, reactive, ref} from "vue";
+import {reactive, ref} from "vue";
 import {AxiosResponse} from "axios";
 import ActionButton from "./ActionButton.vue";
 import AttributeSlider from "./AttributeSlider.vue";
 import ExpertModeCheckbox from "./ExpertModeCheckbox.vue";
 import {debounce} from 'lodash';
+import UserQuery from '../gql/user-query.gql?raw';
 
 const props = defineProps<{
   id: number
 }>();
-const userQuery =
-  `
-  query searchQuery($id: [QueryArgument]) {
-    users(limit: 1, id: $id) {
-    ... on User {
-      id
-      username
-      fullName
-      photo {
-        url
-      }
-      affection
-      activityLevel
-      bodySize
-      hairyness
-      diet
-      attractiveness
-      }
-    }
-  }
-`;
 const user = reactive({});
 const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 500);
 const expertMode = ref(false);
@@ -110,7 +90,7 @@ function findPurrfectPawmate() {
   console.log("Find purrfect pawmate!");
 }
 
-executeQuery(userQuery, {id: props.id}, (response: AxiosResponse) => {
+executeQuery(UserQuery, {id: props.id}, (response: AxiosResponse) => {
   if (response.data) {
     Object.assign(user, response.data.data.users[0])
   }
