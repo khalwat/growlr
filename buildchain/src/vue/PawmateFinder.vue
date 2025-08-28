@@ -6,7 +6,7 @@
           <strong><span v-if="user.fulleName">{{ user.fulleName }}</span><span v-else>Snugglemuffins</span></strong>
           let's find you a pawmate!
         </h1>
-        <img v-if="user.photo.url" :src="user.photo.url" class="w-full h-auto"/>
+        <img v-if="user.photo.url" :src="user.photo.url" class="heart w-full h-auto"/>
       </div>
     </div>
     <div class="w-1/3">
