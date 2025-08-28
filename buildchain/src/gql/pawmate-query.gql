@@ -1,0 +1,20 @@
+query PawmateQuery($id: [QueryArgument]) {
+    entries(limit: 1, id: $id) {
+        ... on pawmates_Entry {
+            id
+            title
+            age
+            sex
+            shortDescription
+            image {
+                url
+            }
+            affection
+            activityLevel
+            bodySize
+            hairyness
+            diet
+            attractiveness
+        }
+    }
+}
