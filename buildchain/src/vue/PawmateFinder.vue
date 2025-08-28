@@ -6,7 +6,7 @@
           <strong><span v-if="user.fulleName">{{ user.fulleName }}</span><span v-else>Snugglemuffins</span></strong>
           let's find you a pawmate!
         </h1>
-        <img v-if="user.photo.url" class="w-full h-auto" :src="user.photo.url"/>
+        <img v-if="user.photo.url" :src="user.photo.url" class="w-full h-auto"/>
       </div>
     </div>
     <div class="w-1/3">
@@ -40,11 +40,10 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import {executeQuery} from '../js/gql-query';
-import {reactive, defineProps} from "vue";
+import {defineProps, reactive} from "vue";
 import {AxiosResponse} from "axios";
-import VueSlider from "vue-3-slider-component";
 import AttributeSlider from "./AttributeSlider.vue";
 
 const props = defineProps<{

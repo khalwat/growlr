@@ -1,4 +1,4 @@
-import axios, {Axios, AxiosResponse, AxiosRequestConfig } from 'axios';
+import axios, {Axios, AxiosRequestConfig, AxiosResponse} from 'axios';
 
 // Information needed for connecting to our CraftQL endpoint
 const apiToken = 'E8x3Rz6mUFFnp1zmfM3bcHiV98H5a5fo';
@@ -15,7 +15,7 @@ function createAxios(url: string, token: string): Axios {
     }
   };
   return axios.create(config);
-};
+}
 
 // Execute a GraphQL query by sending an XHR to our api endpoint
 export function executeQuery(query: string, variables: object, callback: (response: AxiosResponse) => void): void {
@@ -30,4 +30,4 @@ export function executeQuery(query: string, variables: object, callback: (respon
   }).catch((error) => {
     console.log(error);
   })
-};
+}

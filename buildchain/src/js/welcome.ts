@@ -1,17 +1,17 @@
 import App from '@/vue/App.vue';
-import { createApp } from 'vue';
+import {createApp} from 'vue';
 
 // App main
 const main = async () => {
-    // Create our vue instance
-    const app = createApp(App);
-    // Mount the app
-    const root = app.mount('#confetti-container');
+  // Create our vue instance
+  const app = createApp(App);
+  // Mount the app
+  const root = app.mount('#confetti-container');
 
-    return root;
+  return root;
 };
 
 // Execute async function
-main().then( () => {
-    console.log('confetti-container mounted');
+main().then(() => {
+  console.log('confetti-container mounted');
 });

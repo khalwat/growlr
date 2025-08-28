@@ -2,16 +2,16 @@
   <div class="py-10">
     <VueSlider
       v-model="model"
-      min=0
-      max=10
-      tooltip="always"
       :labelStyle="{'font-size': '1.5rem'}"
       :marks="props.marks"
+      max=10
+      min=0
+      tooltip="always"
     />
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import {defineModel, defineProps} from 'vue';
 import VueSlider from "vue-3-slider-component";
 

@@ -1,41 +1,48 @@
 <template>
-  <dropdown-menu direction="right" class="custom-style" transition="zoom">
+  <dropdown-menu class="custom-style" direction="right" transition="zoom">
     <template #trigger>
-      <button class="pt-3 px-2"><img width="32px" height="auto" src="/img/dog-nose.png"></button>
+      <button class="pt-3 px-2"><img height="auto" src="/img/dog-nose.png" width="32px"></button>
     </template>
 
-    <template #header> Pick a Human </template>
+    <template #header> Pick a Human</template>
 
     <template #body>
       <ul>
-        <li v-for="user in users.data" :key="1">
+        <li v-for="user in users" :key="user.username">
           <a :href="'/users/' + user.id">{{ user.username }}</a>
         </li>
       </ul>
     </template>
 
-    <template #footer> </template>
+    <template #footer></template>
   </dropdown-menu>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import DropdownMenu from 'v-dropdown-menu';
-import { executeQuery} from '../js/gql-query';
-import { reactive } from "vue";
+import {executeQuery} from '../js/gql-query';
+import {reactive} from "vue";
 import {AxiosResponse} from "axios";
 
 const usersQuery =
   `
-        {
-            users {
-                id
-                username
-            }
-        }
-        `;
+  query searchQuery($limit: Int) {
+    users(limit: $limit) {
+      id
+      username
+    }
+  }
+`;
 
-const users = reactive({data:{}});
+const users = reactive({});
 
-executeQuery(usersQuery, { limit: 0}, (response: AxiosResponse) => users.data = response.data.data.users);
+executeQuery(usersQuery, {limit: 0}, (response: AxiosResponse) => {
+  if (response.data) {
+    Object.assign(users, response.data.data.users)
+  }
+  if (response.errors) {
+    console.log(response.errors);
+  }
+});
 
 </script>
