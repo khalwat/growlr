@@ -36,6 +36,13 @@
           :marks="{ 0: '🦆', 5: 'Attractiveness', 10: '🦢' }"
         />
       </div>
+
+      <div class="flex justify-center p-6">
+        <ActionButton
+          @find-purrfect-pawmate="findPurrfectPawmate"
+        />
+      </div>
+
     </div>
   </div>
 </template>
@@ -45,6 +52,7 @@ import {executeQuery} from '../js/gql-query';
 import {defineProps, reactive} from "vue";
 import {AxiosResponse} from "axios";
 import AttributeSlider from "./AttributeSlider.vue";
+import ActionButton from "./ActionButton.vue";
 
 const props = defineProps<{
   id: number
@@ -74,6 +82,10 @@ const user = reactive({});
 
 function isEmptyObject(obj: Object) {
   return Object.keys(obj).length === 0;
+}
+
+function findPurrfectPawmate() {
+  console.log("Find purrfect pawmate!");
 }
 
 executeQuery(userQuery, {id: props.id}, (response: AxiosResponse) => {
