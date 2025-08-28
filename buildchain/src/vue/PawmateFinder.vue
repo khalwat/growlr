@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <div class="w-2/3">
+    <div v-if="!isEmptyObject(user)" class="w-2/3">
       <div class="pl-2">
         <h1 class="text-xl">
           <strong><span v-if="user.fulleName">{{ user.fulleName }}</span><span v-else>Snugglemuffins</span></strong>
@@ -49,7 +49,6 @@ import AttributeSlider from "./AttributeSlider.vue";
 const props = defineProps<{
   id: number
 }>();
-
 const userQuery =
   `
   query searchQuery($id: [QueryArgument]) {
@@ -71,8 +70,11 @@ const userQuery =
     }
   }
 `;
-
 const user = reactive({});
+
+function isEmptyObject(obj: Object) {
+  return Object.keys(obj).length === 0;
+}
 
 executeQuery(userQuery, {id: props.id}, (response: AxiosResponse) => {
   if (response.data) {

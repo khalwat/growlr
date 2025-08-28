@@ -4,8 +4,8 @@
       v-model="model"
       :labelStyle="{'font-size': '1.5rem'}"
       :marks="props.marks"
-      max=10
-      min=0
+      :max=10
+      :min=0
       tooltip="always"
     />
   </div>

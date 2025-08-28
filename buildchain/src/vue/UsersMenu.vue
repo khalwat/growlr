@@ -36,7 +36,7 @@ const usersQuery =
 
 const users = reactive({});
 
-executeQuery(usersQuery, {limit: 0}, (response: AxiosResponse) => {
+executeQuery(usersQuery, {limit: null}, (response: AxiosResponse) => {
   if (response.data) {
     Object.assign(users, response.data.data.users)
   }
