@@ -83,7 +83,7 @@ const props = defineProps<{
 }>();
 const user = reactive({});
 const pawmate = reactive({});
-const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 500);
+const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 100);
 const expertMode = ref(false);
 
 function isEmptyObject(obj: Object) {
