@@ -11,66 +11,30 @@
     </div>
     <div class="w-1/3">
       <div class="p-6">
-        <div class="py-10">
-          <VueSlider
-            v-model="user.affection"
-            min=0
-            max=10
-            tooltip="always"
-            :labelStyle="{'font-size': '1.5rem'}"
-            :marks="{ 0: '🌵', 5: 'Affection', 10: '🧸' }"
-          />
-        </div>
-        <div class="py-10">
-          <VueSlider
-            v-model="user.activityLevel"
-            min=0
-            max=10
-            tooltip="always"
-            :labelStyle="{'font-size': '1.5rem'}"
-            :marks="{ 0: '🥔', 5: 'Activity Level', 10: '🏎️' }"
-          />
-        </div>
-        <div class="py-10">
-          <VueSlider
-            v-model="user.bodySize"
-            min=0
-            max=10
-            tooltip="always"
-            :labelStyle="{'font-size': '1.5rem'}"
-            :marks="{ 0: '🪰', 5: 'Body Size', 10: '🐳' }"
-          />
-        </div>
-        <div class="py-10">
-          <VueSlider
-            v-model="user.hairyness"
-            min=0
-            max=10
-            tooltip="always"
-            :labelStyle="{'font-size': '1.5rem'}"
-            :marks="{ 0: '🎱', 5: 'Hairiness', 10: '🐻' }"
-          />
-        </div>
-        <div class="py-10">
-          <VueSlider
-            v-model="user.diet"
-            min=0
-            max=10
-            tooltip="always"
-            :labelStyle="{'font-size': '1.5rem'}"
-            :marks="{ 0: '🌿', 5: 'Diet', 10: '🥩' }"
-          />
-        </div>
-        <div class="py-10">
-          <VueSlider
-            v-model="user.attractiveness"
-            min=0
-            max=10
-            tooltip="always"
-            :labelStyle="{'font-size': '1.5rem'}"
-            :marks="{ 0: '🦆', 5: 'Attractiveness', 10: '🦢' }"
-          />
-        </div>
+        <AttributeSlider
+          v-model="user.affection"
+          :marks="{ 0: '🌵', 5: 'Affection', 10: '🧸' }"
+        />
+        <AttributeSlider
+          v-model="user.activityLevel"
+          :marks="{ 0: '🥔', 5: 'Activity Level', 10: '🏎️' }"
+        />
+        <AttributeSlider
+          v-model="user.bodySize"
+          :marks="{ 0: '🪰', 5: 'Body Size', 10: '🐳' }"
+        />
+        <AttributeSlider
+          v-model="user.hairyness"
+          :marks="{ 0: '🎱', 5: 'Hairiness', 10: '🐻' }"
+        />
+        <AttributeSlider
+          v-model="user.diet"
+          :marks="{ 0: '🌿', 5: 'Diet', 10: '🥩' }"
+        />
+        <AttributeSlider
+          v-model="user.attractiveness"
+          :marks="{ 0: '🦆', 5: 'Attractiveness', 10: '🦢' }"
+        />
       </div>
     </div>
   </div>
@@ -81,6 +45,7 @@ import {executeQuery} from '../js/gql-query';
 import {reactive, defineProps} from "vue";
 import {AxiosResponse} from "axios";
 import VueSlider from "vue-3-slider-component";
+import AttributeSlider from "./AttributeSlider.vue";
 
 const props = defineProps<{
   id: number
