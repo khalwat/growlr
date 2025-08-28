@@ -2,7 +2,7 @@
 
 {% block headScripts %}
     {{ parent() }}
-    {{ craft.vite.script("src/js/pawmate-finder.ts") }}
+    {{ craft.vite.script("src/js/pawmate-finder.ts", false) }}
 {% endblock headScripts %}
 
 {# -- Content that appears before the primary content block -- #}

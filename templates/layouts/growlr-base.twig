@@ -5,8 +5,8 @@
 {% endblock bodyTag %}
 
 {% block headScripts %}
-    {{ craft.vite.script("src/js/app.ts") }}
-    {{ craft.vite.script("src/js/users-menu.ts") }}
+    {{ craft.vite.script("src/js/app.ts", false) }}
+    {{ craft.vite.script("src/js/users-menu.ts", false) }}
 {% endblock headScripts %}
 
 {% block preContent %}
