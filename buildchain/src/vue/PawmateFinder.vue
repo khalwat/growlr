@@ -2,19 +2,14 @@
   <div class="flex">
     <div v-if="!isEmptyObject(user)" class="w-2/3">
       <transition name="fade">
-        <div v-if="isEmptyObject(pawmate)" class="pl-2">
-          <h1 class="text-xl">
-            <strong><span v-if="user.fullName">{{ user.fullName }}</span><span v-else>Snugglemuffins</span></strong>
-            let's find you a pawmate!
-          </h1>
-          <img v-if="user.photo" :src="user.photo.url" class="heart aspect-square object-cover w-full"/>
-        </div>
-        <div v-else class="pl-2 animate-[pulse_1s_ease-in-out]">
-          <h1 class="text-xl">
-            Your pawmate is <strong>{{ pawmate.title }}</strong>!
-          </h1>
-          <img v-if="pawmate.image" :src="pawmate.image[0].url" class="heart aspect-square object-cover w-full"/>
-        </div>
+        <UserProfile
+          v-if="isEmptyObject(pawmate)"
+          v-model="user"
+        />
+        <PawmateProfile
+          v-else
+          v-model="pawmate"
+        />
       </transition>
     </div>
     <div class="w-1/3">
@@ -43,14 +38,16 @@ import ExpertModeCheckbox from "./ExpertModeCheckbox.vue";
 import {debounce} from 'lodash';
 import UserQuery from '../gql/user-query.gql?raw';
 import PawmateQuery from '../gql/pawmate-query.gql?raw';
+import UserProfile from "./UserProfile.vue";
+import PawmateProfile from "./PawmateProfile.vue";
 
 const props = defineProps<{
   id: number
 }>();
 const user: GrowlrUser = reactive({});
 const pawmate: GrowlrPawmate = reactive({});
-const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 100);
 const expertMode = ref(false);
+const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 100);
 
 function isEmptyObject(obj: Object) {
   return Object.keys(obj).length === 0;
@@ -77,7 +74,7 @@ executeQuery(UserQuery, {id: props.id}, (response: AxiosResponse<GrowlrUserRespo
 });
 </script>
 
-<style>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
