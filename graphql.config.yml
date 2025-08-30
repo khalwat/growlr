@@ -1,0 +1,4 @@
+schema:
+  - http://localhost:8050/api:
+      headers:
+        Authorization: Bearer E8x3Rz6mUFFnp1zmfM3bcHiV98H5a5fo
