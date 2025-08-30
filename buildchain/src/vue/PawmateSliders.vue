@@ -39,5 +39,4 @@ import AttributeSlider from "./AttributeSlider.vue";
 
 const emit = defineEmits(['attribute-slider-changed']);
 const user = defineModel<GrowlrUser>();
-
 </script>

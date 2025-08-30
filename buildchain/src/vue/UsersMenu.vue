@@ -32,5 +32,4 @@ executeQuery(AllUsersQuery, {limit: null}, (response: AxiosResponse<GrowlrUserRe
     Object.assign(users, response.data.data.users)
   }
 });
-
 </script>

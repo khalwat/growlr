@@ -21,5 +21,4 @@ const model = defineModel();
 const props = defineProps<{
   marks: object
 }>();
-
 </script>
