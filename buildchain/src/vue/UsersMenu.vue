@@ -25,14 +25,11 @@ import {reactive} from 'vue';
 import {AxiosResponse} from 'axios';
 import AllUsersQuery from '../gql/all-users-query.gql?raw';
 
-const users = reactive({});
+const users: GrowlrUser[] = reactive([]);
 
-executeQuery(AllUsersQuery, {limit: null}, (response: AxiosResponse) => {
+executeQuery(AllUsersQuery, {limit: null}, (response: AxiosResponse<GrowlrUserResponse>) => {
   if (response.data) {
     Object.assign(users, response.data.data.users)
-  }
-  if (response.errors) {
-    console.log(response.errors);
   }
 });
 

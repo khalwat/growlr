@@ -15,6 +15,12 @@ interface GrowlrUser {
   attractiveness?: number,
 }
 
+interface GrowlrUserResponse {
+  data: {
+    users: GrowlrUser[]
+  }
+}
+
 interface GrowlrPawmate {
   id?: number,
   title?: string,
@@ -28,4 +34,10 @@ interface GrowlrPawmate {
   hairyness?: number,
   diet?: number,
   attractiveness?: number,
+}
+
+interface GrowlrPawmateResponse {
+  data: {
+    entries: GrowlrPawmate[]
+  }
 }

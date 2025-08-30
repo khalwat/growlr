@@ -64,22 +64,16 @@ function attributeSliderChanged() {
 
 function findPurrfectPawmate() {
   console.log("Find purrfect pawmate!");
-  executeQuery(PawmateQuery, {id: 7}, (response: AxiosResponse) => {
+  executeQuery(PawmateQuery, {id: 7}, (response: AxiosResponse<GrowlrPawmateResponse>) => {
     if (response.data) {
       Object.assign(pawmate, response.data.data.entries[0])
-    }
-    if (response.errors) {
-      console.log(response.errors);
     }
   });
 }
 
-executeQuery(UserQuery, {id: props.id}, (response: AxiosResponse) => {
+executeQuery(UserQuery, {id: props.id}, (response: AxiosResponse<GrowlrUserResponse>) => {
   if (response.data) {
     Object.assign(user, response.data.data.users[0])
-  }
-  if (response.errors) {
-    console.log(response.errors);
   }
 });
 </script>
