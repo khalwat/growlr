@@ -63,7 +63,6 @@ function attributeSliderChanged() {
 }
 
 function findPurrfectPawmate() {
-  console.log("Find purrfect pawmate!");
   executeQuery(PawmateQuery, {id: 7}, (response: AxiosResponse<GrowlrPawmateResponse>) => {
     if (response.data) {
       Object.assign(pawmate, response.data.data.entries[0])
