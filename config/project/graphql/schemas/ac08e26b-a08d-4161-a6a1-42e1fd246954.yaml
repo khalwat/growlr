@@ -12,6 +12,7 @@ scope:
   - 'volumes.b25edf3a-f5a9-4b45-a329-9525ef339500:read' # Site
   - 'volumes.704b861d-3b0b-4a66-bb5b-6e487e11ab58:read' # People
   - 'usergroups.everyone:read'
+  - 'growlr.all:read'
   - 'sections.38f286df-6270-459e-b2a6-8f01c3f86edd:save' # Homepage
   - 'sections.f8481c59-9880-41e3-b231-24ae565d2264:edit' # Pawmates
   - 'sections.f8481c59-9880-41e3-b231-24ae565d2264:create' # Pawmates

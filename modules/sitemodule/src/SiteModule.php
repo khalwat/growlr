@@ -11,12 +11,18 @@
 namespace modules\sitemodule;
 
 use Craft;
+use craft\events\RegisterGqlQueriesEvent;
+use craft\events\RegisterGqlSchemaComponentsEvent;
+use craft\events\RegisterGqlTypesEvent;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\events\TemplateEvent;
 use craft\i18n\PhpMessageSource;
+use craft\services\Gql;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
 use modules\sitemodule\assetbundles\sitemodule\SiteModuleAsset;
+use modules\sitemodule\gql\interfaces\GrowlrInterface;
+use modules\sitemodule\gql\queries\GrowlrQuery;
 use modules\sitemodule\services\Helper;
 use modules\sitemodule\variables\SiteVariable;
 use yii\base\Event;
@@ -120,6 +126,46 @@ class SiteModule extends Module
                 }
             );
         }
+        // Handler: Gql::EVENT_REGISTER_GQL_TYPES
+        Event::on(
+            Gql::class,
+            Gql::EVENT_REGISTER_GQL_TYPES,
+            static function(RegisterGqlTypesEvent $event) {
+                Craft::debug(
+                    'Gql::EVENT_REGISTER_GQL_TYPES',
+                    __METHOD__
+                );
+                $event->types[] = GrowlrInterface::class;
+            }
+        );
+        // Handler: Gql::EVENT_REGISTER_GQL_QUERIES
+        Event::on(
+            Gql::class,
+            Gql::EVENT_REGISTER_GQL_QUERIES,
+            static function(RegisterGqlQueriesEvent $event) {
+                Craft::debug(
+                    'Gql::EVENT_REGISTER_GQL_QUERIES',
+                    __METHOD__
+                );
+                $queries = GrowlrQuery::getQueries();
+                foreach ($queries as $key => $value) {
+                    $event->queries[$key] = $value;
+                }
+            }
+        );
+        // Handler: Gql::EVENT_REGISTER_SCHEMA_COMPONENTS
+        Event::on(
+            Gql::class,
+            Gql::EVENT_REGISTER_GQL_SCHEMA_COMPONENTS,
+            static function(RegisterGqlSchemaComponentsEvent $event) {
+                Craft::debug(
+                    'Gql::EVENT_REGISTER_GQL_SCHEMA_COMPONENTS',
+                    __METHOD__
+                );
+                $label = Craft::t('site-module', 'Growlr');
+                $event->queries[$label]['growlr.all:read'] = ['label' => Craft::t('site-module', 'Query Growlr data')];
+            }
+        );
         Craft::info(
             Craft::t(
                 'site-module',
