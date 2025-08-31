@@ -60,9 +60,19 @@ function attributeSliderChanged() {
 }
 
 function findPurrfectPawmate() {
-  executeQuery(PawmateQuery, {id: 7}, (response: AxiosResponse<GrowlrPawmateResponse>) => {
+  const vars = {
+    affection: user.affection,
+    activityLevel: user.activityLevel,
+    attractiveness: user.attractiveness,
+    bodySize: user.bodySize,
+    hairyness: user.hairyness,
+    diet: user.diet
+  };
+  executeQuery(PawmateQuery, vars, (response: AxiosResponse<GrowlrPawmateResponse>) => {
+    console.log(vars);
     if (response.data) {
-      Object.assign(pawmate, response.data.data.entries[0])
+      console.log(response.data.data.pawmateResolveMatch);
+      Object.assign(pawmate, response.data.data.pawmateResolveMatch)
     }
   });
 }

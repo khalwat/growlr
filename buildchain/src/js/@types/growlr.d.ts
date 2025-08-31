@@ -38,6 +38,6 @@ interface GrowlrPawmate {
 
 interface GrowlrPawmateResponse {
   data: {
-    entries: GrowlrPawmate[]
+    pawmateResolveMatch: GrowlrPawmate
   }
 }

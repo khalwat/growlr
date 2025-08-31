@@ -3,7 +3,7 @@
     <h1 class="text-xl">
       Your pawmate is <strong>{{ pawmate.title }}</strong>!
     </h1>
-    <img v-if="pawmate.image" :src="pawmate.image[0].url" class="heart aspect-square object-cover w-full"/>
+    <img v-if="pawmate.imageUrl" :src="pawmate.imageUrl" class="heart aspect-square object-cover w-full"/>
   </div>
 </template>
 

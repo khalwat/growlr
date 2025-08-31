@@ -11,9 +11,6 @@ use modules\sitemodule\gql\types\GrowlrType;
 
 class GrowlrGenerator implements GeneratorInterface
 {
-    /**
-     * @inheritdoc
-     */
     public static function generateTypes(mixed $context = null): array
     {
         $gqlTypes = [];

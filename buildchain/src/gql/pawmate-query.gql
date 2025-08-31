@@ -1,20 +1,31 @@
-query PawmateQuery($id: [QueryArgument]) {
-    entries(limit: 1, id: $id) {
-        ... on pawmates_Entry {
-            id
-            title
-            age
-            sex
-            shortDescription
-            image {
-                url
-            }
-            affection
-            activityLevel
-            bodySize
-            hairyness
-            diet
-            attractiveness
-        }
+query PawmateQuery(
+    $affection: Int,
+    $activityLevel: Int,
+    $attractiveness: Int,
+    $bodySize: Int,
+    $hairyness: Int,
+    $diet: Int,
+) {
+    pawmateResolveMatch(
+        affection: $affection
+        activityLevel: $activityLevel
+        attractiveness: $attractiveness
+        bodySize: $bodySize
+        hairyness: $hairyness
+        diet: $diet
+    ) {
+        id
+        title
+        age
+        sex
+        shortDescription
+        imageUrl,
+        affection
+        activityLevel
+        bodySize
+        hairyness
+        diet
+        attractiveness
     }
 }
+

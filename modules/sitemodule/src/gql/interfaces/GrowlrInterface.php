@@ -99,7 +99,7 @@ class GrowlrInterface extends BaseInterfaceType
                 'description' => 'The pawmate hairyness level.',
             ],
             'diet' => [
-                'name' => 'affection',
+                'name' => 'diet',
                 'type' => Type::int(),
                 'description' => 'The pawmate diet level.',
             ],
@@ -107,6 +107,11 @@ class GrowlrInterface extends BaseInterfaceType
                 'name' => 'attractiveness',
                 'type' => Type::int(),
                 'description' => 'The pawmate attractiveness level.',
+            ],
+            'matchPercentage' => [
+                'name' => 'matchPercentage',
+                'type' => Type::int(),
+                'description' => 'How close of a match is this pawmate, as a percentage.',
             ],
         ]);
     }
