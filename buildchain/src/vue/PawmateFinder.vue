@@ -71,6 +71,7 @@ function findPurrfectPawmate() {
   executeQuery(PawmateQuery, vars, (response: AxiosResponse<GrowlrPawmateResponse>) => {
     console.log(vars);
     if (response.data) {
+      pawmates.length = 0;
       Object.assign(pawmates, response.data.data.pawmateResolveMatches)
     }
   });
