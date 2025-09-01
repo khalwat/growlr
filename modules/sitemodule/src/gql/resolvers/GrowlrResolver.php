@@ -47,19 +47,27 @@ class GrowlrResolver extends Resolver
             foreach (self::PAWMATE_ATTRIBUES as $attribute) {
                 $score += abs((int)($arguments[$attribute] ?? 5) - (int)($pawmate[$attribute] ?? 5));
             }
-            $score /= count(self::PAWMATE_ATTRIBUES);
-            $pawmateMatches[$score] = $pawmate;
+            $score = (int)($score / count(self::PAWMATE_ATTRIBUES) * 100);
+            if (!$pawmateMatches->has($score)) {
+                $pawmateMatches[$score] = new Collection();
+            }
+            $pawmateMatches[$score]->push($pawmate);
         }
-        /** @var Entry $entry */
-        $entry = $pawmateMatches->sortKeys()->first();
+        $entries = $pawmateMatches->sortKeys()->first();
         $matchScore = $pawmateMatches->sortKeys()->keys()->first();
-        foreach (self::PAWMATE_RESPONSE as $pawmateResponseItem) {
-            $pawmateMatch[$pawmateResponseItem] = $entry->{$pawmateResponseItem};
+        $resolvedPawmates = [];
+        foreach ($entries as $entry) {
+            $pawmateMatch = [];
+            /** @var Entry $entry */
+            foreach (self::PAWMATE_RESPONSE as $pawmateResponseItem) {
+                $pawmateMatch[$pawmateResponseItem] = $entry->{$pawmateResponseItem};
+            }
+            $pawmateMatch['imageUrl'] = $entry->image->one()->getUrl() ?? '';
+            unset($pawmateMatch['image']);
+            $pawmateMatch['matchPercentage'] = (int)(100 - ($matchScore / 6));
+            $resolvedPawmates[] = $pawmateMatch;
         }
-        $pawmateMatch['imageUrl'] = $entry->image->one()->getUrl() ?? '';
-        unset($pawmateMatch['image']);
-        $pawmateMatch['matchPercentage'] = (int)(100 - ($matchScore * 100) / 6);
 
-        return $pawmateMatch;
+        return $resolvedPawmates;
     }
 }

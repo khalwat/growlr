@@ -27,7 +27,7 @@ interface GrowlrPawmate {
   age?: string,
   sex?: string,
   shortDescription?: string,
-  image?: GrowlrAsset[],
+  imageUrl?: string,
   affection?: number,
   activityLevel?: number,
   bodySize?: number,
@@ -38,6 +38,6 @@ interface GrowlrPawmate {
 
 interface GrowlrPawmateResponse {
   data: {
-    pawmateResolveMatch: GrowlrPawmate
+    pawmateResolveMatches: GrowlrPawmate[]
   }
 }

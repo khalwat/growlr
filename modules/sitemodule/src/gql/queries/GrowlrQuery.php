@@ -18,8 +18,8 @@ class GrowlrQuery extends Query
         }
 
         return [
-            'pawmateResolveMatch' => [
-                'type' => GrowlrInterface::getType(),
+            'pawmateResolveMatches' => [
+                'type' => Type::listOf(GrowlrInterface::getType()),
                 'args' => GrowlrArguments::getArguments(),
                 'resolve' => GrowlrResolver::class . '::resolve',
                 'description' => 'This query is used to resolve a pawmate that best matches the passed in attributes arguments.',

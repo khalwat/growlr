@@ -23,6 +23,7 @@ use craft\web\View;
 use modules\sitemodule\assetbundles\sitemodule\SiteModuleAsset;
 use modules\sitemodule\gql\interfaces\GrowlrInterface;
 use modules\sitemodule\gql\queries\GrowlrQuery;
+use modules\sitemodule\gql\resolvers\GrowlrResolver;
 use modules\sitemodule\services\Helper;
 use modules\sitemodule\variables\SiteVariable;
 use yii\base\Event;
@@ -174,6 +175,15 @@ class SiteModule extends Module
             ),
             __METHOD__
         );
+
+        $result = GrowlrResolver::resolve('woof', [
+            'affection' => 9,
+            'activityLevel' => 7,
+            'bodySize' => 3,
+            'hairyness' => 3,
+            'diet' => 7,
+            'attractiveness' => 3,
+        ], 'woof', null);
     }
 
     // Protected Methods

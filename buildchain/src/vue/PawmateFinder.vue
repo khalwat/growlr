@@ -3,12 +3,12 @@
     <div v-if="!isEmptyObject(user)" class="w-2/3">
       <transition name="fade">
         <UserProfile
-          v-if="isEmptyObject(pawmate)"
+          v-if="isEmptyObject(pawmates)"
           v-model="user"
         />
         <PawmateProfile
           v-else
-          v-model="pawmate"
+          v-model="pawmates"
         />
       </transition>
     </div>
@@ -45,7 +45,7 @@ const props = defineProps<{
   id: number
 }>();
 const user: GrowlrUser = reactive({});
-const pawmate: GrowlrPawmate = reactive({});
+const pawmates: GrowlrPawmate[] = reactive([]);
 const expertMode = ref(false);
 const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 100);
 
@@ -71,8 +71,7 @@ function findPurrfectPawmate() {
   executeQuery(PawmateQuery, vars, (response: AxiosResponse<GrowlrPawmateResponse>) => {
     console.log(vars);
     if (response.data) {
-      console.log(response.data.data.pawmateResolveMatch);
-      Object.assign(pawmate, response.data.data.pawmateResolveMatch)
+      Object.assign(pawmates, response.data.data.pawmateResolveMatches)
     }
   });
 }
