@@ -25,6 +25,5 @@ import 'swiper/css/pagination';
 import 'swiper/css';
 
 const modules = [Pagination, Navigation, Scrollbar, A11y];
-
 const pawmates = defineModel<GrowlrPawmate[]>();
 </script>
