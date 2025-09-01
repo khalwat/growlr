@@ -1,0 +1,43 @@
+{
+  "_gql-query-XxhUloN-.js": {
+    "file": "assets/gql-query-XxhUloN-.js",
+    "name": "gql-query",
+    "integrity": "sha384-SnH66jr6Mhn9Q2LquY+uTdTh9rSBbTObkceoCHlqZ6roE2557AK+fEgk8m0eTokx"
+  },
+  "src/js/app.ts": {
+    "file": "assets/app-D5nSAtHu.js",
+    "name": "app",
+    "src": "src/js/app.ts",
+    "isEntry": true,
+    "css": [
+      "assets/app-BgY8iVrQ.css"
+    ],
+    "integrity": "sha384-rnJr+/k3PI0jokvN/4/HV+zcnzyjEQA+AobKQkEjICOqp3g36H0Os5YHPSZNU7Au"
+  },
+  "src/js/pawmate-finder.ts": {
+    "file": "assets/pawmate-finder-Ls4mYnkQ.js",
+    "name": "pawmate-finder",
+    "src": "src/js/pawmate-finder.ts",
+    "isEntry": true,
+    "imports": [
+      "_gql-query-XxhUloN-.js"
+    ],
+    "css": [
+      "assets/pawmate-finder-BNC5Ei4F.css"
+    ],
+    "integrity": "sha384-zb4n5/T3oOhfx76TtYBtFiEE658Y+5sBjw9MVOqSTHcMf+y0mgJzZLDJImk8WwHG"
+  },
+  "src/js/users-menu.ts": {
+    "file": "assets/users-menu-DUO0NYKu.js",
+    "name": "users-menu",
+    "src": "src/js/users-menu.ts",
+    "isEntry": true,
+    "imports": [
+      "_gql-query-XxhUloN-.js"
+    ],
+    "css": [
+      "assets/users-menu-DUV43bI-.css"
+    ],
+    "integrity": "sha384-/xieWTTwJr8HwauuB41fGLIJ4EbnJUkKGCH2GZbRGAdRkNwvFdV+6VZRXm+jdfEw"
+  }
+}
