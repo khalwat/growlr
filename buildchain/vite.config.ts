@@ -17,8 +17,7 @@ export default defineConfig(({command}) => ({
     rollupOptions: {
       input: {
         'app': 'src/js/app.ts',
-        'welcome': 'src/js/welcome.ts',
-        'users-menu': 'src/js/welcome.ts',
+        'users-menu': 'src/js/users-menu.ts',
         'pawmate-finder': 'src/js/pawmate-finder.ts',
       },
     },
