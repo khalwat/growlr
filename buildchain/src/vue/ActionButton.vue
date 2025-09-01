@@ -12,18 +12,23 @@
 
 <script lang="ts" setup>
 import {ModalsContainer, useModal} from 'vue-final-modal'
-import ModalConfirm from './TOSModal.vue'
+import ConfirmModal from './ConfirmModal.vue'
 import {defineEmits} from "vue";
 
 const emit = defineEmits(['find-purrfect-pawmate']);
 
 const {open, close} = useModal({
-  component: ModalConfirm,
+  component: ConfirmModal,
   attrs: {
+    modalTitle: 'GROWLR TERMS OF SERVICE',
+    buttonTitle: 'I AGREE',
     onConfirm() {
       close();
       emit('find-purrfect-pawmate');
     },
+  },
+  slots: {
+    message: 'By clicking the I AGREE button, you are legally bound to adopt whatever pawmate is chosen for you. There are no exceptions. There are no returns. There are no refunds.',
   },
 })
 

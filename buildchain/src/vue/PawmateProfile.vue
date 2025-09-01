@@ -1,14 +1,15 @@
 <template>
-  <div>
+  <div class="px-24">
     <swiper
       :modules="modules"
       :pagination="{ clickable: true }"
       :slides-per-view="1"
       navigation
     >
-      <swiper-slide v-for="pawmate in pawmates" :key="pawmate.id" class="pl-2">
-        <h1 class="text-xl">
-          Your pawmate is <strong>{{ pawmate.title }}</strong>!
+      <swiper-slide v-for="(pawmate, index) in pawmates" :key="pawmate.id">
+        <h1 class="text-6xl flex justify-center items-center">
+          <strong>{{ pawmate.title }}</strong>!
+          <InfoButton :pawmate="pawmates[index]"/>
         </h1>
         <img :src="pawmate.imageUrl" class="heart aspect-square object-cover w-full"/>
       </swiper-slide>
@@ -20,6 +21,7 @@
 import {defineModel} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {A11y, Navigation, Pagination, Scrollbar} from 'swiper/modules';
+import InfoButton from "./InfoButton.vue";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';

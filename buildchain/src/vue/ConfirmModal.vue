@@ -3,18 +3,16 @@
     class="flex justify-center items-center"
     content-class="flex flex-col max-w-xl mx-4 p-4 bg-white dark:bg-gray-900 border dark:border-gray-700 rounded-lg space-y-2"
   >
-    <div class="">
-      <h1 class="text-xl">
-        GROWLR TERMS OF SERVICE
+    <div class="dark:text-white">
+      <h1 class="text-3xl font-bold">
+        {{ modalTitle }}
       </h1>
       <p class="text-lg py-8">
-        By clicking the I AGREE button, you are legally bound to adopt whatever pawmate is chosen for you.
-        There are no exceptions. There are no returns. There are no refunds.
+        <slot name="message"/>
       </p>
-      <slot/>
       <div class="flex justify-right items-right">
         <button class="mt-1 ml-auto px-2 border rounded-lg" @click="emit('confirm')">
-          I AGREE
+          {{ buttonTitle }}
         </button>
       </div>
     </div>
@@ -24,6 +22,10 @@
 <script lang="ts" setup>
 import {VueFinalModal} from 'vue-final-modal'
 
+defineProps<{
+  modalTitle?: string,
+  buttonTitle?: string
+}>()
 const emit = defineEmits<{
   (e: 'confirm'): void
 }>()

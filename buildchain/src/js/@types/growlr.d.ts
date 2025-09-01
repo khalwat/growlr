@@ -34,6 +34,7 @@ interface GrowlrPawmate {
   hairyness?: number,
   diet?: number,
   attractiveness?: number,
+  matchPercentage?: number,
 }
 
 interface GrowlrPawmateResponse {

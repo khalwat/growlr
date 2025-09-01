@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user" class="pl-2">
+  <div v-if="user" class="px-24">
     <h1 class="text-xl">
       <strong><span v-if="user.fullName">{{ user.fullName }}</span><span v-else>Snugglemuffins</span></strong>
       let's find you a pawmate!

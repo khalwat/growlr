@@ -26,6 +26,7 @@ query PawmateQuery(
         hairyness
         diet
         attractiveness
+        matchPercentage
     }
 }
 
