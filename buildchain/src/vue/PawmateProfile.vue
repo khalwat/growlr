@@ -1,5 +1,5 @@
 <template>
-  <div class="px-24">
+  <div class="px-[15%]">
     <swiper
       :modules="modules"
       :pagination="{ clickable: true }"
