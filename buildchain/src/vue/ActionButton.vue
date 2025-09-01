@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center p-6">
     <button
-      class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
+      class="text-white bg-blue-500 hover:bg-blue-800 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
       type="button"
       @click="handleClick">
       <span>Find my purrfect Pawmate</span><span class="text-xl>"> 🐾 </span>
