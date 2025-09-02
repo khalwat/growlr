@@ -35,7 +35,7 @@ import {AxiosResponse} from "axios";
 import PawmateSliders from "./PawmateSliders.vue";
 import ActionButton from "./ActionButton.vue";
 import ExpertModeCheckbox from "./ExpertModeCheckbox.vue";
-import {debounce} from 'lodash';
+import {debounce} from 'lodash-es';
 import UserQuery from '../gql/user-query.gql?raw';
 import PawmateQuery from '../gql/pawmate-query.gql?raw';
 import UserProfile from "./UserProfile.vue";
