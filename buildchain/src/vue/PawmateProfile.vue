@@ -17,7 +17,6 @@
     <audio ref="backgroundAudio">
       <source src="/audio/lets-get-it-on.mp3" type="audio/mpeg">
     </audio>
-    <img src="/audio/lets-get-it-on.mp3"/>
   </div>
 </template>
 
