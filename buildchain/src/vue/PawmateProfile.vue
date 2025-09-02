@@ -14,11 +14,15 @@
         <img :src="pawmate.imageUrl" class="heart aspect-square object-cover w-full"/>
       </swiper-slide>
     </swiper>
+    <audio ref="backgroundAudio">
+      <source src="/audio/lets-get-it-on.mp3" type="audio/mpeg">
+    </audio>
+    <img src="/audio/lets-get-it-on.mp3"/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {defineModel} from "vue";
+import {defineModel, onMounted, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {A11y, Navigation, Pagination, Scrollbar} from 'swiper/modules';
 import InfoButton from "./InfoButton.vue";
@@ -28,4 +32,13 @@ import 'swiper/css';
 
 const modules = [Pagination, Navigation, Scrollbar, A11y];
 const pawmates = defineModel<GrowlrPawmate[]>();
+const backgroundAudio = ref<HTMLAudioElement | null>(null);
+
+onMounted(() => {
+  setTimeout(() => {
+    if (backgroundAudio.value) {
+      backgroundAudio.value.play();
+    }
+  }, 500);
+});
 </script>

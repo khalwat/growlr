@@ -91,8 +91,8 @@ function makeConfetti() {
     confetti.start(config);
     setTimeout(() => {
       confetti.stop();
-    }, 5000);
-  }, 1000);
+    }, 23000);
+  }, 500);
 }
 
 executeQuery(UserQuery, {id: props.id}, (response: AxiosResponse<GrowlrUserResponse>) => {
