@@ -13,7 +13,6 @@
 <script lang="ts" setup>
 import {ModalsContainer, useModal} from 'vue-final-modal'
 import ConfirmModal from './ConfirmModal.vue'
-import {defineEmits} from "vue";
 
 const emit = defineEmits(['find-purrfect-pawmate']);
 

@@ -34,7 +34,6 @@
 </template>
 
 <script lang="ts" setup>
-import {defineEmits, defineModel} from 'vue';
 import AttributeSlider from "./AttributeSlider.vue";
 
 const emit = defineEmits(['attribute-slider-changed']);

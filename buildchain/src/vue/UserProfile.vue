@@ -9,7 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-import {defineModel} from "vue";
 
 const user = defineModel<GrowlrUser>();
 </script>

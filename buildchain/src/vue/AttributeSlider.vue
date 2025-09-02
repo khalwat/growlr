@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts" setup>
-import {defineEmits, defineModel} from 'vue';
 import VueSlider from "vue-3-slider-component";
 
 const emit = defineEmits(['attribute-slider-changed']);

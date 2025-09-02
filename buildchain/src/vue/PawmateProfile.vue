@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import {defineModel, onMounted, ref} from "vue";
+import {onMounted, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {A11y, Navigation, Pagination, Scrollbar} from 'swiper/modules';
 import InfoButton from "./InfoButton.vue";
