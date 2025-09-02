@@ -40,7 +40,7 @@ import UserQuery from '../gql/user-query.gql?raw';
 import PawmateQuery from '../gql/pawmate-query.gql?raw';
 import UserProfile from "./UserProfile.vue";
 import PawmateProfile from "./PawmateProfile.vue";
-import Confetti from 'vue-confetti/src/confetti.js';
+import {makeConfetti} from '../js/make-confetti';
 
 const props = defineProps<{
   id: number
@@ -76,23 +76,6 @@ function findPurrfectPawmate() {
       makeConfetti();
     }
   });
-}
-
-function makeConfetti() {
-  const config: Partial<ConfettiConfig> = {
-    defaultType: 'heart',
-    defaultSize: 50,
-    defaultColors: ['Gold', 'pink', 'Violet', 'SandyBrown', 'Crimson'],
-  };
-  const confetti: ConfettiInterface = new Confetti();
-
-  setTimeout(() => {
-
-    confetti.start(config);
-    setTimeout(() => {
-      confetti.stop();
-    }, 23000);
-  }, 500);
 }
 
 executeQuery(UserQuery, {id: props.id}, (response: AxiosResponse<GrowlrUserResponse>) => {
