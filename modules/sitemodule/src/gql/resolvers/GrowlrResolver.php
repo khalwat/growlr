@@ -9,6 +9,8 @@ use Illuminate\Support\Collection;
 
 class GrowlrResolver extends Resolver
 {
+    protected const PAWMATE_ATTRIBUTE_RANGE = 10;
+
     protected const PAWMATE_ATTRIBUES = [
         'affection',
         'activityLevel',
@@ -47,14 +49,16 @@ class GrowlrResolver extends Resolver
             foreach (self::PAWMATE_ATTRIBUES as $attribute) {
                 $score += abs((int)($arguments[$attribute] ?? 5) - (int)($pawmate[$attribute] ?? 5));
             }
-            $score = (int)($score / count(self::PAWMATE_ATTRIBUES) * 100);
             if (!$pawmateMatches->has($score)) {
                 $pawmateMatches[$score] = new Collection();
             }
             $pawmateMatches[$score]->push($pawmate);
         }
         $entries = $pawmateMatches->sortKeys()->first();
+        // The score will range from 0 to the number of attributes * the range of potential values of each attribute
+        // 0 is a perfect match
         $matchScore = $pawmateMatches->sortKeys()->keys()->first();
+        $matchScore = ($matchScore * 100) / (count(self::PAWMATE_ATTRIBUES) * self::PAWMATE_ATTRIBUTE_RANGE);
         $resolvedPawmates = [];
         foreach ($entries as $entry) {
             $pawmateMatch = [];
@@ -64,7 +68,8 @@ class GrowlrResolver extends Resolver
             }
             $pawmateMatch['imageUrl'] = $entry->image->one()->getUrl() ?? '';
             unset($pawmateMatch['image']);
-            $pawmateMatch['matchPercentage'] = (int)(100 - ($matchScore / 6));
+            // Subtract the score from 100 to get the percentage
+            $pawmateMatch['matchPercentage'] = (int)(100 - $matchScore);
             $resolvedPawmates[] = $pawmateMatch;
         }
 
