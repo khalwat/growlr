@@ -8,9 +8,7 @@ export function makeConfetti(): ConfettiInterface {
   };
   const confetti: ConfettiInterface = new Confetti();
 
-  setTimeout(() => {
-    confetti.start(config);
-  }, 500);
+  confetti.start(config);
 
   return confetti;
 }
