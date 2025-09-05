@@ -11,5 +11,5 @@
 
 return [
     'api' => 'graphql/api',
-    'users/<userId:\d>' => ['template' => 'users/index'],
+    'users/<userId:\d+>' => ['template' => 'users/index'],
 ];
