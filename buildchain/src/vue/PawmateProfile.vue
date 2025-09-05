@@ -21,23 +21,32 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, ref} from "vue";
+import {onMounted, onUpdated, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {A11y, Navigation, Pagination, Scrollbar} from 'swiper/modules';
 import InfoButton from "./InfoButton.vue";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
+import {makeConfetti} from "../js/make-confetti";
 
 const modules = [Pagination, Navigation, Scrollbar, A11y];
 const pawmates = defineModel<GrowlrPawmate[]>();
 const backgroundAudio = ref<HTMLAudioElement | null>(null);
 
-onMounted(() => {
+function bedazzle() {
   setTimeout(() => {
+    const confetti = makeConfetti();
     if (backgroundAudio.value) {
+      backgroundAudio.value.currentTime = 0;
       backgroundAudio.value.play();
+      backgroundAudio.value.addEventListener("ended", () => {
+        confetti.stop();
+      });
     }
   }, 500);
-});
+}
+
+onMounted(() => bedazzle());
+onUpdated(() => bedazzle());
 </script>

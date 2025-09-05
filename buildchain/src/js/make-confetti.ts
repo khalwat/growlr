@@ -1,6 +1,6 @@
 import Confetti from "vue-confetti/src/confetti.js";
 
-export function makeConfetti() {
+export function makeConfetti(): ConfettiInterface {
   const config: Partial<ConfettiConfig> = {
     defaultType: 'heart',
     defaultSize: 50,
@@ -9,10 +9,8 @@ export function makeConfetti() {
   const confetti: ConfettiInterface = new Confetti();
 
   setTimeout(() => {
-
     confetti.start(config);
-    setTimeout(() => {
-      confetti.stop();
-    }, 23000);
   }, 500);
+
+  return confetti;
 }

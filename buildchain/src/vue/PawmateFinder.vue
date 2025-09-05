@@ -40,7 +40,6 @@ import UserQuery from '../gql/user-query.gql?raw';
 import PawmateQuery from '../gql/pawmate-query.gql?raw';
 import UserProfile from "./UserProfile.vue";
 import PawmateProfile from "./PawmateProfile.vue";
-import {makeConfetti} from '../js/make-confetti';
 
 const props = defineProps<{
   id: number
@@ -73,7 +72,6 @@ function findPurrfectPawmate() {
     if (response.data) {
       pawmates.length = 0;
       Object.assign(pawmates, response.data.data.pawmateResolveMatches)
-      makeConfetti();
     }
   });
 }
