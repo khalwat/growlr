@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex pt-8">
     <div v-if="!isEmptyObject(user)" class="w-2/3">
       <UserProfile
         v-if="isEmptyObject(pawmates)"
