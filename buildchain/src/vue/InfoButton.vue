@@ -8,47 +8,12 @@
     </button>
     <ConfirmModal
       v-model="show"
-      :modalTitle="props.pawmate.title"
       buttonTitle="Done"
+      modalTitle=""
       @confirm="confirm"
     >
       <template #message>
-        <p class="text-xl">
-          {{ pawmate.shortDescription }}
-        </p>
-        <p class="py-8 text-2xl font-bold text-center">
-          Match: {{ pawmate.matchPercentage }}%!
-        </p>
-        <div class="flex justify-center px-2">
-          <table class="table-auto">
-            <tbody>
-            <tr>
-              <td class="text-right px-2">Affection:</td>
-              <td class="text-left px-2">{{ pawmate.affection }}</td>
-            </tr>
-            <tr>
-              <td class="text-right px-2">Activity Level:</td>
-              <td class="text-left px-2">{{ pawmate.activityLevel }}</td>
-            </tr>
-            <tr>
-              <td class="text-right px-2">Body Size:</td>
-              <td class="text-left px-2">{{ pawmate.bodySize }}</td>
-            </tr>
-            <tr>
-              <td class="text-right px-2">Hairyness:</td>
-              <td class="text-left px-2">{{ pawmate.hairyness }}</td>
-            </tr>
-            <tr>
-              <td class="text-right px-2">Diet:</td>
-              <td class="text-left px-2">{{ pawmate.diet }}</td>
-            </tr>
-            <tr>
-              <td class="text-right px-2">Attractiveness:</td>
-              <td class="text-left px-2">{{ pawmate.attractiveness }}</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+        <PawmateSummary :pawmate="pawmate"/>
       </template>
     </ConfirmModal>
 
@@ -59,6 +24,7 @@
 <script lang="ts" setup>
 import {ModalsContainer} from 'vue-final-modal'
 import ConfirmModal from './ConfirmModal.vue'
+import PawmateSummary from './PawmateSummary.vue'
 import {ref} from "vue";
 
 const show = ref(false);

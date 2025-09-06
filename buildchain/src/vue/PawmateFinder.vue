@@ -1,16 +1,15 @@
 <template>
   <div class="flex">
     <div v-if="!isEmptyObject(user)" class="w-2/3">
-      <transition name="fade">
-        <UserProfile
-          v-if="isEmptyObject(pawmates)"
-          v-model="user"
-        />
-        <PawmateProfile
-          v-else
-          v-model="pawmates"
-        />
-      </transition>
+      <UserProfile
+        v-if="isEmptyObject(pawmates)"
+        v-model="user"
+      />
+      <PawmateProfile
+        v-else
+        v-model="pawmates"
+        :expert-mode="expertMode.value"
+      />
     </div>
     <div class="w-1/3">
       <PawmateSliders
@@ -82,15 +81,3 @@ executeQuery(UserQuery, {id: props.id}, (response: AxiosResponse<GrowlrUserRespo
   }
 });
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

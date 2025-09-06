@@ -18,6 +18,7 @@ query PawmateQuery(
         title
         age
         sex
+        neutered
         shortDescription
         imageUrl,
         affection

@@ -4,6 +4,7 @@
       :modules="modules"
       :pagination="{ clickable: true }"
       :slides-per-view="1"
+      class="pawmate-wrapper"
       navigation
     >
       <swiper-slide v-for="(pawmate, index) in pawmates" :key="pawmate.id">
@@ -33,20 +34,45 @@ import {makeConfetti} from "../js/make-confetti";
 const modules = [Pagination, Navigation, Scrollbar, A11y];
 const pawmates = defineModel<GrowlrPawmate[]>();
 const backgroundAudio = ref<HTMLAudioElement | null>(null);
+const props = defineProps<{
+  expertMode: boolean,
+}>();
 
 function bedazzle() {
   setTimeout(() => {
+    const elements = document.querySelectorAll('.pawmate-wrapper');
+    elements.forEach(element => {
+      element.classList.add('heartbeat');
+    });
     const confetti = makeConfetti();
     if (backgroundAudio.value) {
       backgroundAudio.value.currentTime = 0;
       backgroundAudio.value.play();
       backgroundAudio.value.addEventListener("ended", () => {
         confetti.stop();
+        elements.forEach(element => {
+          element.classList.remove('heartbeat');
+        });
       });
     }
   }, 500);
 }
 
 onMounted(() => bedazzle());
-onUpdated(() => bedazzle());
+if (!props.expertMode) {
+  onUpdated(() => bedazzle());
+}
 </script>
+
+<style scoped>
+.heartbeat {
+  animation: beat .50s infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes beat {
+  to {
+    transform: scale(1.05);
+  }
+}
+</style>

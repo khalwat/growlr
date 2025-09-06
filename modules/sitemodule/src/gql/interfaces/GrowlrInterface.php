@@ -68,6 +68,11 @@ class GrowlrInterface extends BaseInterfaceType
                 'type' => Type::string(),
                 'description' => 'The sex of the pawmate.',
             ],
+            'neutered' => [
+                'name' => 'neutered',
+                'type' => Type::boolean(),
+                'description' => 'Whether the pawmate is neutered.',
+            ],
             'shortDescription' => [
                 'name' => 'shortDescription',
                 'type' => Type::string(),

@@ -25,6 +25,7 @@ class GrowlrResolver extends Resolver
         'title',
         'age',
         'sex',
+        'neutered',
         'shortDescription',
         'image',
         'affection',

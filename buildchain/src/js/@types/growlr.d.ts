@@ -26,6 +26,7 @@ interface GrowlrPawmate {
   title?: string,
   age?: string,
   sex?: string,
+  neutered?: boolean,
   shortDescription?: string,
   imageUrl?: string,
   affection?: number,
