@@ -8,7 +8,7 @@
       <PawmateProfile
         v-else
         v-model="pawmates"
-        :expert-mode="expertMode.value"
+        :expert-mode="expertMode"
       />
     </div>
     <div class="w-1/3">
