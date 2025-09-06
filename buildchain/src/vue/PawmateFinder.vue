@@ -1,28 +1,30 @@
 <template>
-  <div class="flex pt-8">
-    <div v-if="!isEmptyObject(user)" class="w-2/3">
-      <UserProfile
-        v-if="isEmptyObject(pawmates)"
-        v-model="user"
-      />
-      <PawmateProfile
-        v-else
-        v-model="pawmates"
-        :expert-mode="expertMode"
-      />
-    </div>
-    <div class="w-1/3">
-      <PawmateSliders
-        v-model="user"
-        @attribute-slider-changed="attributeSliderChanged"
-      />
-      <ActionButton
-        v-show="!expertMode"
-        @find-purrfect-pawmate="debouncedFindPurrfectPawmate"
-      />
-      <ExpertModeCheckbox
-        v-model="expertMode"
-      />
+  <div class="min-h-screen">
+    <div v-if="!isEmptyObject(user)" class="flex pt-8">
+      <div class="w-2/3">
+        <UserProfile
+          v-if="isEmptyObject(pawmates)"
+          v-model="user"
+        />
+        <PawmateProfile
+          v-else
+          v-model="pawmates"
+          :expert-mode="expertMode"
+        />
+      </div>
+      <div class="w-1/3">
+        <PawmateSliders
+          v-model="user"
+          @attribute-slider-changed="attributeSliderChanged"
+        />
+        <ActionButton
+          v-show="!expertMode"
+          @find-purrfect-pawmate="debouncedFindPurrfectPawmate"
+        />
+        <ExpertModeCheckbox
+          v-model="expertMode"
+        />
+      </div>
     </div>
   </div>
 </template>
