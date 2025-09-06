@@ -59,9 +59,11 @@ function bedazzle() {
 }
 
 onMounted(() => bedazzle());
-if (!props.expertMode) {
-  onUpdated(() => bedazzle());
-}
+onUpdated(() => {
+  if (!props.expertMode) {
+    bedazzle()
+  }
+});
 </script>
 
 <style scoped>
