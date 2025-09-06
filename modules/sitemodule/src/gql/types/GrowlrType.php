@@ -23,12 +23,7 @@ class GrowlrType extends ObjectType
     protected function resolve(mixed $source, array $arguments, mixed $context, ResolveInfo $resolveInfo): mixed
     {
         $fieldName = $resolveInfo->fieldName;
-        $result = $source[$fieldName] ?? '';
 
-        if (empty($result)) {
-            $result = null;
-        }
-
-        return $result;
+        return $source[$fieldName] ?? '';
     }
 }
