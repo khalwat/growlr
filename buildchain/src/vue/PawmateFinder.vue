@@ -10,6 +10,7 @@
           v-else
           v-model="pawmates"
           :expert-mode="expertMode"
+          :user="user"
         />
       </div>
       <div class="w-1/3">

@@ -7,6 +7,9 @@ query UserQuery($id: [QueryArgument]) {
             photo {
                 url
             }
+            together {
+                url
+            }
             affection
             activityLevel
             bodySize

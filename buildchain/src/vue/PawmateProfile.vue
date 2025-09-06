@@ -9,6 +9,11 @@
     >
       <swiper-slide v-for="(pawmate, index) in pawmates" :key="pawmate.id">
         <h1 class="text-6xl flex justify-center items-center">
+          <MoreauButton
+            v-if="user.together && user.together[index] && user.together[index].url"
+            :together-title="user.fullName + ' & ' + pawmate.title + ' together...'"
+            :together-url="user.together[index].url"
+          />
           <strong>{{ pawmate.title }}</strong>!
           <InfoButton :pawmate="pawmates[index]"/>
         </h1>
@@ -30,11 +35,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
 import {makeConfetti} from "../js/make-confetti";
+import MoreauButton from "./MoreauButton.vue";
 
 const modules = [Pagination, Navigation, Scrollbar, A11y];
 const pawmates = defineModel<GrowlrPawmate[]>();
 const backgroundAudio = ref<HTMLAudioElement | null>(null);
 const props = defineProps<{
+  user: GrowlrUser,
   expertMode: boolean,
 }>();
 

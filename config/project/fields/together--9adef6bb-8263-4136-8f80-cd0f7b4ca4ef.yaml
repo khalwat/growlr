@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: together
+instructions: null
+name: Together
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds: null
+  branchLimit: null
+  defaultPlacement: end
+  defaultUploadLocationSource: 'volume:b25edf3a-f5a9-4b45-a329-9525ef339500' # Site
+  defaultUploadLocationSubpath: null
+  maintainHierarchy: false
+  maxRelations: 5
+  minRelations: 0
+  previewMode: full
+  restrictFiles: false
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:1f57f4bb-af34-4cda-8fc3-858845ff8aa4' # Animals
+  restrictedLocationSubpath: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources:
+    - 'volume:b25edf3a-f5a9-4b45-a329-9525ef339500' # Site
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

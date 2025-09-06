@@ -7,6 +7,7 @@ interface GrowlrUser {
   username?: string,
   fullName?: string,
   photo?: GrowlrAsset,
+  together?: GrowlrAsset[],
   affection?: number,
   activityLevel?: number,
   bodySize?: number,
