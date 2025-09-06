@@ -1192,7 +1192,7 @@ CREATE TABLE `sessions` (
   KEY `idx_zojoktmwmlhxlxjkbxoyldnrwhgxdnhihock` (`dateUpdated`),
   KEY `idx_zdkucqykqnlqkmxgkpgpcxaeltvkpxrabntr` (`userId`),
   CONSTRAINT `fk_atmyoaqjuztijhlrczsloxadmlmzdeureubf` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1714,7 +1714,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-06 17:37:47
+-- Dump completed on 2025-09-06 18:59:00
 -- MariaDB dump 10.19  Distrib 10.6.14-MariaDB, for Linux (aarch64)
 --
 -- Host: mysql    Database: project
@@ -2062,7 +2062,7 @@ commit;
 LOCK TABLES `gqltokens` WRITE;
 /*!40000 ALTER TABLE `gqltokens` DISABLE KEYS */;
 set autocommit=0;
-INSERT INTO `gqltokens` VALUES (1,'Growlr','E8x3Rz6mUFFnp1zmfM3bcHiV98H5a5fo',1,NULL,'2025-09-06 17:37:12',2,'2025-08-24 21:38:16','2025-09-06 17:37:12','f6fa13a6-b2f5-4ffe-a42f-615d247f25a3'),(2,'Public Token','__PUBLIC__',0,NULL,NULL,NULL,'2025-08-24 21:38:36','2025-08-24 21:38:36','57135037-e5c0-4cdb-8fee-1a65a319fdf2');
+INSERT INTO `gqltokens` VALUES (1,'Growlr','E8x3Rz6mUFFnp1zmfM3bcHiV98H5a5fo',1,NULL,'2025-09-06 17:39:20',2,'2025-08-24 21:38:16','2025-09-06 17:39:20','f6fa13a6-b2f5-4ffe-a42f-615d247f25a3'),(2,'Public Token','__PUBLIC__',0,NULL,NULL,NULL,'2025-08-24 21:38:36','2025-08-24 21:38:36','57135037-e5c0-4cdb-8fee-1a65a319fdf2');
 /*!40000 ALTER TABLE `gqltokens` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -2085,7 +2085,7 @@ commit;
 LOCK TABLES `info` WRITE;
 /*!40000 ALTER TABLE `info` DISABLE KEYS */;
 set autocommit=0;
-INSERT INTO `info` VALUES (1,'5.8.13.2','5.8.0.3',0,'yytnspworgak','3@nxwtzkkeuy','2025-07-26 00:39:20','2025-09-06 17:33:10','1d343fa4-1257-47a1-895c-1bc1a9c048b1');
+INSERT INTO `info` VALUES (1,'5.8.17','5.8.0.3',0,'yytnspworgak','3@nxwtzkkeuy','2025-07-26 00:39:20','2025-09-06 18:58:44','1d343fa4-1257-47a1-895c-1bc1a9c048b1');
 /*!40000 ALTER TABLE `info` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -2439,7 +2439,7 @@ commit;
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 set autocommit=0;
-INSERT INTO `users` VALUES (1,25,NULL,1,0,0,0,1,'admin','Ryan Irelan','Ryan','Irelan','ryan@craftquest.io','$2y$13$MGWMAyODGGNUxnCDJLFuq.Th9GNORsxur66M3A5Q94mPduTxOuoEO','2025-09-06 16:54:21',NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,'2025-07-26 00:39:20','2025-07-26 00:39:20','2025-09-06 16:54:21'),(46,47,NULL,1,0,0,0,0,'andrew','Andrew Welch','Andrew','Welch','andrew@nystudio107.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:30:37','2025-09-05 23:37:30'),(48,49,NULL,1,0,0,0,0,'brandon','Brandon Kelly','Brandon','Kelly','brandon@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:46:18','2025-09-05 23:47:11'),(50,51,NULL,1,0,0,0,0,'brad','Brad Bell','Brad','Bell','brad@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:51:11','2025-09-05 23:51:53'),(52,53,NULL,1,0,0,0,0,'leah','Leah Stephenson','Leah','Stephenson','leah@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:52:59','2025-09-05 23:53:46'),(54,55,NULL,1,0,0,0,0,'luke','Luke Holder','Luke','Holder','luke@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:55:08','2025-09-05 23:55:44'),(56,57,NULL,1,0,0,0,0,'august','August Miller','August','Miller','august@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:57:11','2025-09-05 23:57:48'),(58,59,NULL,1,0,0,0,0,'travis','Travis Gertz','Travis','Gertz','travis@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:58:31','2025-09-05 23:59:10');
+INSERT INTO `users` VALUES (1,25,NULL,1,0,0,0,1,'admin','Ryan Irelan','Ryan','Irelan','ryan@craftquest.io','$2y$13$MGWMAyODGGNUxnCDJLFuq.Th9GNORsxur66M3A5Q94mPduTxOuoEO','2025-09-06 18:58:45',NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,'2025-07-26 00:39:20','2025-07-26 00:39:20','2025-09-06 18:58:45'),(46,47,NULL,1,0,0,0,0,'andrew','Andrew Welch','Andrew','Welch','andrew@nystudio107.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:30:37','2025-09-05 23:37:30'),(48,49,NULL,1,0,0,0,0,'brandon','Brandon Kelly','Brandon','Kelly','brandon@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:46:18','2025-09-05 23:47:11'),(50,51,NULL,1,0,0,0,0,'brad','Brad Bell','Brad','Bell','brad@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:51:11','2025-09-05 23:51:53'),(52,53,NULL,1,0,0,0,0,'leah','Leah Stephenson','Leah','Stephenson','leah@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:52:59','2025-09-05 23:53:46'),(54,55,NULL,1,0,0,0,0,'luke','Luke Holder','Luke','Holder','luke@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:55:08','2025-09-05 23:55:44'),(56,57,NULL,1,0,0,0,0,'august','August Miller','August','Miller','august@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:57:11','2025-09-05 23:57:48'),(58,59,NULL,1,0,0,0,0,'travis','Travis Gertz','Travis','Gertz','travis@craftcms.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,'2025-09-05 23:58:31','2025-09-05 23:59:10');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -2503,4 +2503,4 @@ commit;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-06 17:37:47
+-- Dump completed on 2025-09-06 18:59:00
