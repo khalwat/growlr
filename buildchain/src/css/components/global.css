@@ -11,3 +11,26 @@ img.heart {
     linear-gradient(to right, #000, #000) bottom/100% 50% no-repeat;
     clip-path: polygon(-41% 0, 50% 91%, 141% 0);
 }
+
+.flip-container {
+    perspective: 1000px; /* For 3D effect */
+}
+
+.flipper {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative; /* Crucial for positioning front/back */
+}
+
+.front, .back {
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back of the element when not facing the user */
+}
+
+.back {
+    transform: rotateY(180deg); /* Or rotateX */
+}
+
+.flip-container.flipped .flipper {
+    transform: rotateY(180deg); /* Or rotateX */
+}
