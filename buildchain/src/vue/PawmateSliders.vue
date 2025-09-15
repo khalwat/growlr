@@ -1,7 +1,8 @@
 <template>
   <div v-if="user" class="pr-12">
     <h2 class="text-xl font-semibold mb-4">What are you looking for?</h2>
-    <div class="bg-gradient-to-b from-gray-50 to-gray-300 shadow-md rounded-lg px-12 py-6">
+    <div class="shadow-lg rounded-lg px-12 py-6"
+         style="backdrop-filter: blur(2px) brightness(80%) saturate(70%);">
       <AttributeSlider
         v-model="user.affection"
         :marks="{ 0: '🌵', 5: 'Affection', 10: '🧸' }"
