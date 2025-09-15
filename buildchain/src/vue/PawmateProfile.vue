@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pawmates && pawmates.length" class="px-[15%]">
+  <div v-if="pawmates && pawmates.length" class="px-[15%] text-shadow-sm text-shadow-grey-50">
     <swiper
       :modules="modules"
       :pagination="{ clickable: true }"
