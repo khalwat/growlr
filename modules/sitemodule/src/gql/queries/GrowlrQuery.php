@@ -6,7 +6,8 @@ use craft\gql\base\Query;
 use GraphQL\Type\Definition\Type;
 use modules\sitemodule\gql\arguments\GrowlrArguments;
 use modules\sitemodule\gql\interfaces\GrowlrInterface;
-use modules\sitemodule\gql\resolvers\GrowlrResolver;
+use modules\sitemodule\gql\resolvers\GrowlrAllMatchesResolver;
+use modules\sitemodule\gql\resolvers\GrowlrBestMatchesResolver;
 use modules\sitemodule\helpers\Gql as GqlHelper;
 
 class GrowlrQuery extends Query
@@ -18,11 +19,17 @@ class GrowlrQuery extends Query
         }
 
         return [
-            'pawmateResolveMatches' => [
+            'pawmateBestMatches' => [
                 'type' => Type::listOf(GrowlrInterface::getType()),
                 'args' => GrowlrArguments::getArguments(),
-                'resolve' => GrowlrResolver::class . '::resolve',
-                'description' => 'This query is used to resolve a pawmate that best matches the passed in attributes arguments.',
+                'resolve' => GrowlrBestMatchesResolver::class . '::resolve',
+                'description' => 'This query is used to resolve pawmates that best match the passed in attributes arguments.',
+            ],
+            'pawmateAllMatches' => [
+                'type' => Type::listOf(GrowlrInterface::getType()),
+                'args' => GrowlrArguments::getArguments(),
+                'resolve' => GrowlrAllMatchesResolver::class . '::resolve',
+                'description' => 'This query is used to resolve all pawmates, sorted by `matchPercentage`.',
             ],
         ];
     }

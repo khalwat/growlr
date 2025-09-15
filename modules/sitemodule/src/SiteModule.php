@@ -23,7 +23,7 @@ use craft\web\View;
 use modules\sitemodule\assetbundles\sitemodule\SiteModuleAsset;
 use modules\sitemodule\gql\interfaces\GrowlrInterface;
 use modules\sitemodule\gql\queries\GrowlrQuery;
-use modules\sitemodule\gql\resolvers\GrowlrResolver;
+use modules\sitemodule\gql\resolvers\GrowlrBestMatchesResolver;
 use modules\sitemodule\services\Helper;
 use modules\sitemodule\variables\SiteVariable;
 use yii\base\Event;
@@ -176,7 +176,7 @@ class SiteModule extends Module
             __METHOD__
         );
 
-        $result = GrowlrResolver::resolve('woof', [
+        $result = GrowlrBestMatchesResolver::resolve('woof', [
             'affection' => 9,
             'activityLevel' => 7,
             'bodySize' => 3,

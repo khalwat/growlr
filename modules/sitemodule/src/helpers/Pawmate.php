@@ -1,14 +1,13 @@
 <?php
 
-namespace modules\sitemodule\gql\resolvers;
+namespace modules\sitemodule\helpers;
 
 use craft\elements\Entry;
-use craft\gql\base\Resolver;
-use GraphQL\Type\Definition\ResolveInfo;
 use Illuminate\Support\Collection;
 
-class GrowlrResolver extends Resolver
+class Pawmate
 {
+
     protected const PAWMATE_ATTRIBUTE_RANGE = 10;
 
     protected const PAWMATE_ATTRIBUES = [
@@ -36,7 +35,10 @@ class GrowlrResolver extends Resolver
         'attractiveness',
     ];
 
-    public static function resolve(mixed $source, array $arguments, mixed $context, ?ResolveInfo $resolveInfo): mixed
+    // Public Methods
+    // =========================================================================
+
+    public static function getPawmateMatches(array $arguments, ?int $limit): array
     {
         $pawmateMatches = new Collection();
         $entryQuery = Entry::find();
@@ -50,28 +52,30 @@ class GrowlrResolver extends Resolver
             foreach (self::PAWMATE_ATTRIBUES as $attribute) {
                 $score += abs((int)($arguments[$attribute] ?? 5) - (int)($pawmate[$attribute] ?? 5));
             }
+            // The score will range from 0 to the number of attributes * the range of potential values of each attribute
+            // 0 is a perfect match
+            $score = ($score * 100) / (count(self::PAWMATE_ATTRIBUES) * self::PAWMATE_ATTRIBUTE_RANGE);
             if (!$pawmateMatches->has($score)) {
                 $pawmateMatches[$score] = new Collection();
             }
             $pawmateMatches[$score]->push($pawmate);
         }
-        $entries = $pawmateMatches->sortKeys()->first();
-        // The score will range from 0 to the number of attributes * the range of potential values of each attribute
-        // 0 is a perfect match
-        $matchScore = $pawmateMatches->sortKeys()->keys()->first();
-        $matchScore = ($matchScore * 100) / (count(self::PAWMATE_ATTRIBUES) * self::PAWMATE_ATTRIBUTE_RANGE);
+        $limit = $limit ?: $pawmateMatches->count();
+        $pawmateMatches = $pawmateMatches->sortKeys()->take($limit);
         $resolvedPawmates = [];
-        foreach ($entries as $entry) {
-            $pawmateMatch = [];
-            /** @var Entry $entry */
-            foreach (self::PAWMATE_RESPONSE as $pawmateResponseItem) {
-                $pawmateMatch[$pawmateResponseItem] = $entry->{$pawmateResponseItem};
+        foreach ($pawmateMatches as $matchScore => $entries) {
+            foreach ($entries as $entry) {
+                $pawmateMatch = [];
+                /** @var Entry $entry */
+                foreach (self::PAWMATE_RESPONSE as $pawmateResponseItem) {
+                    $pawmateMatch[$pawmateResponseItem] = $entry->{$pawmateResponseItem};
+                }
+                $pawmateMatch['imageUrl'] = $entry->image->one()->getUrl() ?? '';
+                unset($pawmateMatch['image']);
+                // Subtract the score from 100 to get the percentage
+                $pawmateMatch['matchPercentage'] = (int)(100 - $matchScore);
+                $resolvedPawmates[] = $pawmateMatch;
             }
-            $pawmateMatch['imageUrl'] = $entry->image->one()->getUrl() ?? '';
-            unset($pawmateMatch['image']);
-            // Subtract the score from 100 to get the percentage
-            $pawmateMatch['matchPercentage'] = (int)(100 - $matchScore);
-            $resolvedPawmates[] = $pawmateMatch;
         }
 
         return $resolvedPawmates;
