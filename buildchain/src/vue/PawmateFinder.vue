@@ -34,7 +34,7 @@
           v-show="!expertMode"
           @find-purrfect-pawmate="debouncedFindPurrfectPawmate"
         />
-        <ProButton
+        <UpgradeToProButton
           @upgrade-to-pro="debouncedFindPurrfectPawmate(); proMode = !proMode;"
         />
         <ExpertModeCheckbox
@@ -51,7 +51,7 @@ import {reactive, ref} from "vue";
 import {AxiosResponse} from "axios";
 import PawmateSliders from "./views/PawmateSliders.vue";
 import ActionButton from "./ui-elements/buttons/ActionButton.vue";
-import ProButton from "./ui-elements/buttons/ProButton.vue";
+import UpgradeToProButton from "./ui-elements/buttons/UpgradeToProButton.vue";
 import ExpertModeCheckbox from "./ui-elements/ExpertModeCheckbox.vue";
 import {debounce} from 'lodash-es';
 import UserQuery from '../gql/user-query.gql?raw';

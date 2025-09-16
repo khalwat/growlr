@@ -13,7 +13,7 @@
       @confirm="confirm"
     >
       <template #message>
-        <PawmateSummary :pawmate="pawmate"/>
+        <PawmateInfoModalMessage :pawmate="pawmate"/>
       </template>
     </ConfirmModal>
 
@@ -24,7 +24,7 @@
 <script lang="ts" setup>
 import {ModalsContainer} from 'vue-final-modal'
 import ConfirmModal from '../../modals/ConfirmModal.vue'
-import PawmateSummary from '../../modals/PawmateSummary.vue'
+import PawmateInfoModalMessage from '../../modals/PawmateInfoModalMessage.vue'
 import {ref} from "vue";
 
 const show = ref(false);

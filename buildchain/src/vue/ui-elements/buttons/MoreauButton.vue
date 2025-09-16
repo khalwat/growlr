@@ -13,7 +13,7 @@
       @confirm="confirm"
     >
       <template #message>
-        <img :src="togetherUrl"/>
+        <MoreauModalMessage :together-title="togetherTitle" :together-url="togetherUrl"/>
       </template>
     </ConfirmModal>
 
@@ -25,6 +25,7 @@
 import {ModalsContainer} from 'vue-final-modal'
 import ConfirmModal from '../../modals/ConfirmModal.vue'
 import {ref} from "vue";
+import MoreauModalMessage from "../../modals/MoreauModalMessage.vue";
 
 const show = ref(false);
 const props = defineProps<{

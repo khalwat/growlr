@@ -1,7 +1,7 @@
 <template>
   <dropdown-menu class="custom-style" direction="right" transition="zoom">
     <template #trigger>
-      <button class="pt-3 px-2"><img height="auto" src="/img/dog-nose.png" width="32px"></button>
+      <button class="pt-3 px-2"><img alt="User Menu" height="auto" src="/img/dog-nose.png" width="32px"></button>
     </template>
 
     <template #header> Pick a Human</template>

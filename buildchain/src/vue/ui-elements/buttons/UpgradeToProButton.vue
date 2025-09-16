@@ -13,13 +13,7 @@
       @confirm="confirm"
     >
       <template #message>
-        <p>Upgrade to the Pro version of Growlr now for just $19.99 per month!</p>
-        <p>You get cool features like:</p>
-        <ul class="list-disc pl-8">
-          <li>Advanced charts</li>
-          <li>Unlimited matches</li>
-          <li>Rate your pawmate!</li>
-        </ul>
+        <UpgradeToProModalMessage/>
       </template>
     </ConfirmModal>
     <ModalsContainer/>
@@ -30,6 +24,7 @@
 import {ModalsContainer} from 'vue-final-modal'
 import ConfirmModal from '../../modals/ConfirmModal.vue'
 import {ref} from "vue";
+import UpgradeToProModalMessage from "../../modals/UpgradeToProModalMessage.vue";
 
 const show = ref(false);
 const buttonName = ref('Upgrade to PRO');

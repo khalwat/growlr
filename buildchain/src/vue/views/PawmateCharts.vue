@@ -51,7 +51,7 @@ const barChartOptions = computed(() => {
         return `
         <div class="w-[200px] bg-pink-200 text-center px-4">
           <div class="py-4 text-2xl font-bold">${name}</div>
-          <img class="heart aspect-square object-cover w-full" src="${imgUrl}" />
+          <img class="heart aspect-square object-cover w-full" src="${imgUrl}" alt="${name}"/>
           <div class="py-4 text-xl font-bold">${label}: ${matchPercentage}%</div>
         </div>
         `;

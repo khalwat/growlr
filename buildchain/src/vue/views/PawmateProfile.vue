@@ -15,9 +15,9 @@
             :together-url="user.together[index].url"
           />
           <strong>{{ pawmate.title }}</strong>!
-          <InfoButton :pawmate="pawmates[index]"/>
+          <PawmateInfoButton :pawmate="pawmates[index]"/>
         </h1>
-        <img :src="pawmate.imageUrl" class="heart aspect-square object-cover w-full"/>
+        <img :alt="pawmate.title" :src="pawmate.imageUrl" class="heart aspect-square object-cover w-full"/>
       </swiper-slide>
     </swiper>
     <audio ref="backgroundAudio">
@@ -30,7 +30,7 @@
 import {onMounted, onUnmounted, onUpdated, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {A11y, Navigation, Pagination, Scrollbar} from 'swiper/modules';
-import InfoButton from "../ui-elements/buttons/InfoButton.vue";
+import PawmateInfoButton from "../ui-elements/buttons/PawmateInfoButton.vue";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';

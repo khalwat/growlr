@@ -1,7 +1,7 @@
 <template>
   <div class="flex px-8 items-center">
     <div class="w-1/2">
-      <img :src="pawmate.imageUrl" class="heart aspect-square object-cover"/>
+      <img :alt="pawmate.title" :src="pawmate.imageUrl" class="heart aspect-square object-cover"/>
     </div>
     <div class="w-1/2 text-center pb-8">
       <h1 class="text-3xl font-bold">{{ pawmate.title }}</h1>
