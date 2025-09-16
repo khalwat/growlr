@@ -4,9 +4,17 @@
       <strong>All your matches</strong>!
     </h1>
     <apexchart
-      :options="chartOptions"
-      :series="series"
+      :options="barChartOptions"
+      :series="barChartSeries"
       type="bar"
+    ></apexchart>
+    <h1 class="text-6xl flex justify-center items-center">
+      <strong>Pawmate attributes!</strong>!
+    </h1>
+    <apexchart
+      :options="lineChartOptions"
+      :series="lineChartSeries"
+      type="line"
     ></apexchart>
   </div>
 </template>
@@ -16,9 +24,14 @@ import apexchart from 'vue3-apexcharts';
 import {ApexOptions} from 'apexcharts';
 import {computed} from "vue";
 
+interface LineSeriesData {
+  name: string;
+  data: number[];
+}
+
 const allPawmates = defineModel<GrowlrPawmate[]>();
 
-const chartOptions = computed(() => {
+const barChartOptions = computed(() => {
   let optionsData: string[] = [];
   if (allPawmates && allPawmates.value) {
     optionsData = allPawmates.value.reduce<string[]>((acc, obj) => {
@@ -31,7 +44,6 @@ const chartOptions = computed(() => {
   return <ApexOptions>{
     tooltip: {
       custom: function ({series, seriesIndex, dataPointIndex, w}) {
-        console.log(w.config.series[seriesIndex]);
         const imgUrl = w.config.series[seriesIndex]['img'][dataPointIndex];
         const name = w.globals.labels[dataPointIndex];
         const label = w.config.series[seriesIndex]['name'];
@@ -46,8 +58,7 @@ const chartOptions = computed(() => {
       }
     },
     chart: {
-      id: 'vuechart-example',
-      type: 'bar',
+      id: 'pawmate-matches-bar-chart',
     },
     legend: {
       show: false
@@ -64,7 +75,7 @@ const chartOptions = computed(() => {
   };
 });
 
-const series = computed(() => {
+const barChartSeries = computed(() => {
   let seriesData: number[] = [];
   let seriesImg: string[] = [];
   if (allPawmates && allPawmates.value) {
@@ -88,5 +99,60 @@ const series = computed(() => {
       img: seriesImg
     },
   ];
+});
+
+const lineChartOptions = computed(() => {
+  return <ApexOptions>{
+    chart: {
+      id: 'pawmate-attraibutes-line-chart',
+    },
+    colors: ['#00668E', '#00A9B2', '#2B82A0', '#50A3A2', '#A6518F', '#DB7F5E', '#008FFB', '#807094', '#333333'],
+    stroke: {
+      width: 10,
+      curve: 'smooth'
+    },
+    xaxis: {
+      categories: ['Affection', 'Activity Level', 'Body Size', 'Hairiness', 'Diet', 'Attractiveness'],
+      title: {
+        text: 'Attributes'
+      }
+    },
+    yaxis: {
+      title: {
+        text: 'Value'
+      },
+      min: 0,
+      max: 10
+    },
+  };
+});
+
+const lineChartSeries = computed(() => {
+  let seriesData: LineSeriesData[] = [];
+  let seriesImg: string[] = [];
+  if (allPawmates && allPawmates.value) {
+    seriesData = allPawmates.value.reduce<LineSeriesData[]>((acc, obj) => {
+      const seriesData = {
+        name: obj.title ?? '',
+        data: [
+          obj.affection ?? 5,
+          obj.activityLevel ?? 5,
+          obj.bodySize ?? 5,
+          obj.hairyness ?? 5,
+          obj.diet ?? 5,
+          obj.attractiveness ?? 5,
+        ]
+      };
+      acc.push(seriesData);
+      return acc;
+    }, []);
+    seriesImg = allPawmates.value.reduce<string[]>((acc, obj) => {
+      if (obj.imageUrl) {
+        acc.push(obj.imageUrl);
+      }
+      return acc;
+    }, []);
+  }
+  return seriesData;
 });
 </script>
