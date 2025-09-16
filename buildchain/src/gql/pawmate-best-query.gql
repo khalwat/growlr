@@ -1,0 +1,33 @@
+query PawmateQuery(
+    $affection: Int,
+    $activityLevel: Int,
+    $attractiveness: Int,
+    $bodySize: Int,
+    $hairyness: Int,
+    $diet: Int,
+) {
+    pawmateBestMatches(
+        affection: $affection
+        activityLevel: $activityLevel
+        attractiveness: $attractiveness
+        bodySize: $bodySize
+        hairyness: $hairyness
+        diet: $diet
+    ) {
+        id
+        title
+        age
+        sex
+        neutered
+        shortDescription
+        imageUrl,
+        affection
+        activityLevel
+        bodySize
+        hairyness
+        diet
+        attractiveness
+        matchPercentage
+    }
+}
+

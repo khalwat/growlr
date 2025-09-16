@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user" class="px-[15%] text-shadow-sm text-shadow-grey-50">
+  <div v-if="user" class="lg:px-[15%] sm:px-[5%] text-shadow-sm text-shadow-grey-50">
     <h1 class="text-xl text-center mb-4">
       <strong><span v-if="user.fullName">{{ user.fullName }}</span><span v-else>Snugglemuffins</span></strong>
       let's find you a pawmate!

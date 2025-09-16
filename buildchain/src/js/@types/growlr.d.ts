@@ -39,8 +39,14 @@ interface GrowlrPawmate {
   matchPercentage?: number,
 }
 
-interface GrowlrPawmateResponse {
+interface GrowlrPawmateBestResponse {
   data: {
-    pawmateResolveMatches: GrowlrPawmate[]
+    pawmateBestMatches: GrowlrPawmate[]
+  }
+}
+
+interface GrowlrPawmateAllResponse {
+  data: {
+    pawmateAllMatches: GrowlrPawmate[]
   }
 }

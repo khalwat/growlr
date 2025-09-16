@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user" class="pr-12 text-shadow-sm text-shadow-grey-50">
+  <div v-if="user" class="lg:pr-12 sm:pr-6 text-shadow-sm text-shadow-grey-50">
     <h2 class="text-xl font-semibold mb-4">What are you looking for?</h2>
     <div class="shadow-lg rounded-lg px-12 py-6"
          style="backdrop-filter: blur(2px) brightness(80%) saturate(50%);">

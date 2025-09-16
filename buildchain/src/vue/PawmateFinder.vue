@@ -1,8 +1,12 @@
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen h-full">
     <div v-if="!isEmptyObject(user)" class="flex pt-8">
       <div class="w-2/3">
-        <div :class="{ flipped: !isEmptyObject(pawmates) }"
+        <div v-if="proMode">
+          <PawmateCharts v-model="allPawmates"/>
+        </div>
+        <div v-if="!proMode"
+             :class="{ flipped: !isEmptyObject(pawmates) }"
              class="flip-container">
           <div class="flipper">
             <div class="front w-full">
@@ -30,6 +34,9 @@
           v-show="!expertMode"
           @find-purrfect-pawmate="debouncedFindPurrfectPawmate"
         />
+        <ProButton
+          @upgrade-to-pro="debouncedFindPurrfectPawmate(); proMode = !proMode;"
+        />
         <ExpertModeCheckbox
           v-model="expertMode"
         />
@@ -44,20 +51,25 @@ import {reactive, ref} from "vue";
 import {AxiosResponse} from "axios";
 import PawmateSliders from "./PawmateSliders.vue";
 import ActionButton from "./ActionButton.vue";
+import ProButton from "./ProButton.vue";
 import ExpertModeCheckbox from "./ExpertModeCheckbox.vue";
 import {debounce} from 'lodash-es';
 import UserQuery from '../gql/user-query.gql?raw';
-import PawmateQuery from '../gql/pawmate-query.gql?raw';
+import PawmateBestQuery from '../gql/pawmate-best-query.gql?raw';
+import PawmateAllQuery from '../gql/pawmate-all-query.gql?raw';
 import UserProfile from "./UserProfile.vue";
 import PawmateProfile from "./PawmateProfile.vue";
+import PawmateCharts from "./PawmateCharts.vue"
 
 const props = defineProps<{
   id: number
 }>();
 const user: GrowlrUser = reactive({});
 const pawmates: GrowlrPawmate[] = reactive([]);
+const allPawmates: GrowlrPawmate[] = reactive([]);
 const expertMode = ref(false);
-const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 100);
+const proMode = ref(false);
+const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 50);
 
 function isEmptyObject(obj: Object) {
   return Object.keys(obj).length === 0;
@@ -78,12 +90,21 @@ function findPurrfectPawmate() {
     hairyness: user.hairyness,
     diet: user.diet
   };
-  executeQuery(PawmateQuery, vars, (response: AxiosResponse<GrowlrPawmateResponse>) => {
-    if (response.data) {
-      pawmates.length = 0;
-      Object.assign(pawmates, response.data.data.pawmateResolveMatches)
-    }
-  });
+  if (proMode.value) {
+    executeQuery(PawmateAllQuery, vars, (response: AxiosResponse<GrowlrPawmateAllResponse>) => {
+      if (response.data) {
+        allPawmates.length = 0;
+        Object.assign(allPawmates, response.data.data.pawmateAllMatches)
+      }
+    });
+  } else {
+    executeQuery(PawmateBestQuery, vars, (response: AxiosResponse<GrowlrPawmateBestResponse>) => {
+      if (response.data) {
+        pawmates.length = 0;
+        Object.assign(pawmates, response.data.data.pawmateBestMatches)
+      }
+    });
+  }
 }
 
 executeQuery(UserQuery, {id: props.id}, (response: AxiosResponse<GrowlrUserResponse>) => {

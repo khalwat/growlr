@@ -6,7 +6,7 @@ query PawmateQuery(
     $hairyness: Int,
     $diet: Int,
 ) {
-    pawmateResolveMatches(
+    pawmateAllMatches(
         affection: $affection
         activityLevel: $activityLevel
         attractiveness: $attractiveness
