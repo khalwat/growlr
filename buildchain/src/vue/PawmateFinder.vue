@@ -49,17 +49,17 @@
 import {executeQuery} from '../js/gql-query';
 import {reactive, ref} from "vue";
 import {AxiosResponse} from "axios";
-import PawmateSliders from "./PawmateSliders.vue";
-import ActionButton from "./ActionButton.vue";
-import ProButton from "./ProButton.vue";
-import ExpertModeCheckbox from "./ExpertModeCheckbox.vue";
+import PawmateSliders from "./views/PawmateSliders.vue";
+import ActionButton from "./ui-elements/buttons/ActionButton.vue";
+import ProButton from "./ui-elements/buttons/ProButton.vue";
+import ExpertModeCheckbox from "./ui-elements/ExpertModeCheckbox.vue";
 import {debounce} from 'lodash-es';
 import UserQuery from '../gql/user-query.gql?raw';
 import PawmateBestQuery from '../gql/pawmate-best-query.gql?raw';
 import PawmateAllQuery from '../gql/pawmate-all-query.gql?raw';
-import UserProfile from "./UserProfile.vue";
-import PawmateProfile from "./PawmateProfile.vue";
-import PawmateCharts from "./PawmateCharts.vue"
+import UserProfile from "./views/UserProfile.vue";
+import PawmateProfile from "./views/PawmateProfile.vue";
+import PawmateCharts from "./views/PawmateCharts.vue"
 
 const props = defineProps<{
   id: number

@@ -24,7 +24,7 @@
 
 <script lang="ts" setup>
 import {ModalsContainer} from 'vue-final-modal'
-import ConfirmModal from './ConfirmModal.vue'
+import ConfirmModal from '../../modals/ConfirmModal.vue'
 import {ref} from "vue";
 
 const show = ref(false);

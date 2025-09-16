@@ -27,19 +27,20 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, onUpdated, ref} from "vue";
+import {onMounted, onUnmounted, onUpdated, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {A11y, Navigation, Pagination, Scrollbar} from 'swiper/modules';
-import InfoButton from "./InfoButton.vue";
+import InfoButton from "../ui-elements/buttons/InfoButton.vue";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
-import {makeConfetti} from "../js/make-confetti";
-import MoreauButton from "./MoreauButton.vue";
+import {makeConfetti} from "../../js/make-confetti";
+import MoreauButton from "../ui-elements/buttons/MoreauButton.vue";
 
 const modules = [Pagination, Navigation, Scrollbar, A11y];
 const pawmates = defineModel<GrowlrPawmate[]>();
 const backgroundAudio = ref<HTMLAudioElement | null>(null);
+const confetti = makeConfetti();
 const props = defineProps<{
   user: GrowlrUser,
   expertMode: boolean,
@@ -51,18 +52,22 @@ function bedazzle() {
     elements.forEach(element => {
       element.classList.add('heartbeat');
     });
-    const confetti = makeConfetti();
     if (backgroundAudio.value) {
       backgroundAudio.value.currentTime = 0;
       backgroundAudio.value.play();
       backgroundAudio.value.addEventListener("ended", () => {
-        confetti.stop();
-        elements.forEach(element => {
-          element.classList.remove('heartbeat');
-        });
+        unbedazzle();
       });
     }
   }, 500);
+}
+
+function unbedazzle() {
+  const elements = document.querySelectorAll('.pawmate-wrapper');
+  confetti.stop();
+  elements.forEach(element => {
+    element.classList.remove('heartbeat');
+  });
 }
 
 onMounted(() => bedazzle());
@@ -70,6 +75,9 @@ onUpdated(() => {
   if (!props.expertMode) {
     bedazzle()
   }
+});
+onUnmounted(() => {
+  unbedazzle();
 });
 </script>
 

@@ -5,30 +5,12 @@
     {{ craft.vite.script("src/js/pawmate-finder.ts", false) }}
 {% endblock headScripts %}
 
-{# -- Content that appears before the primary content block -- #}
-{% block preContent %}
-    {{ parent() }}
+{# -- Primary content block -- #}
+{% block content %}
     <section>
+        <div id="pawmate-finder-container">
+            <pawmate-finder :id="{{ userId }}">
+            </pawmate-finder>
+        </div>
     </section>
 {% endblock %}
-
-    {# -- Primary content block -- #}
-    {% block content %}
-        <section>
-            <div id="pawmate-finder-container">
-                <pawmate-finder :id="{{ userId }}">
-                </pawmate-finder>
-            </div>
-        </section>
-    {% endblock %}
-
-    {# -- Content that appears after the primary content block -- #}
-    {% block postContent %}
-        <section>
-        </section>
-    {% endblock %}
-
-    {# -- Any <script></script> tags that should be included before </body> -- #}
-    {% block bodyScripts %}
-        {{ parent() }}
-    {% endblock bodyScripts %}

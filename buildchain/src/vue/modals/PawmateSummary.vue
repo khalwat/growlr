@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts" setup>
-import AttributeIndicator from "./AttributeIndicator.vue";
+import AttributeIndicator from "../ui-elements/AttributeIndicator.vue";
 
 const props = defineProps<{
   pawmate: GrowlrPawmate,

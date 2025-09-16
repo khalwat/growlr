@@ -2,7 +2,7 @@
 import '@/css/components/v-dropdown-menu.css';
 import '@/css/components/dropdown.css';
 
-import App from '@/vue/UsersMenu.vue';
+import App from '@/vue/ui-elements/UsersMenu.vue';
 import {createApp} from 'vue';
 
 // App main

@@ -23,8 +23,8 @@
 
 <script lang="ts" setup>
 import {ModalsContainer} from 'vue-final-modal'
-import ConfirmModal from './ConfirmModal.vue'
-import PawmateSummary from './PawmateSummary.vue'
+import ConfirmModal from '../../modals/ConfirmModal.vue'
+import PawmateSummary from '../../modals/PawmateSummary.vue'
 import {ref} from "vue";
 
 const show = ref(false);

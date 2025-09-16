@@ -20,10 +20,10 @@
 
 <script lang="ts" setup>
 import DropdownMenu from 'v-dropdown-menu';
-import {executeQuery} from '../js/gql-query';
+import {executeQuery} from '../../js/gql-query';
 import {reactive} from 'vue';
 import {AxiosResponse} from 'axios';
-import AllUsersQuery from '../gql/all-users-query.gql?raw';
+import AllUsersQuery from '../../gql/all-users-query.gql?raw';
 
 const users: GrowlrUser[] = reactive([]);
 
