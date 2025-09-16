@@ -29,7 +29,7 @@
 <script lang="ts" setup>
 import {onMounted, onUnmounted, onUpdated, ref} from "vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
-import {A11y, Navigation, Pagination, Scrollbar} from 'swiper/modules';
+import {A11y, Navigation, Pagination} from 'swiper/modules';
 import PawmateInfoButton from "../ui-elements/buttons/PawmateInfoButton.vue";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -37,7 +37,7 @@ import 'swiper/css';
 import {makeConfetti} from "../../js/make-confetti";
 import MoreauButton from "../ui-elements/buttons/MoreauButton.vue";
 
-const modules = [Pagination, Navigation, Scrollbar, A11y];
+const modules = [Pagination, Navigation, A11y];
 const pawmates = defineModel<GrowlrPawmate[]>();
 const backgroundAudio = ref<HTMLAudioElement | null>(null);
 const confetti = makeConfetti();
