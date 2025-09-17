@@ -25,7 +25,7 @@ import {reactive} from 'vue';
 import {AxiosResponse} from 'axios';
 import AllUsersQuery from '../../gql/all-users-query.gql?raw';
 
-const users: GrowlrUser[] = reactive([]);
+let users: GrowlrUser[] = reactive([]);
 
 executeQuery(AllUsersQuery, {limit: null}, (response: AxiosResponse<GrowlrUserResponse>) => {
   if (response.data) {

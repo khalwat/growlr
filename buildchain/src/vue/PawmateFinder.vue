@@ -64,12 +64,12 @@ import PawmateCharts from "./views/PawmateCharts.vue"
 const props = defineProps<{
   id: number
 }>();
-const user: GrowlrUser = reactive({});
-const pawmates: GrowlrPawmate[] = reactive([]);
-const allPawmates: GrowlrPawmate[] = reactive([]);
 const expertMode = ref(false);
 const proMode = ref(false);
 const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 50);
+let user: GrowlrUser = reactive({});
+let pawmates: GrowlrPawmate[] = reactive([]);
+let allPawmates: GrowlrPawmate[] = reactive([]);
 
 function isEmptyObject(obj: Object) {
   return Object.keys(obj).length === 0;
