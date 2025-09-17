@@ -9,10 +9,10 @@ class Gql extends GqlHelper
     // Public Methods
     // =========================================================================
 
-    public static function canQueryGrowlr(): bool
+    public static function canQueryPawmate(): bool
     {
         $allowedEntities = self::extractAllowedEntitiesFromSchema();
 
-        return isset($allowedEntities['growlr']);
+        return isset($allowedEntities['pawmate']);
     }
 }

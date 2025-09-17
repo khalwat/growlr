@@ -4,14 +4,14 @@ namespace modules\sitemodule\gql\types;
 
 use craft\gql\base\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
-use modules\sitemodule\gql\interfaces\GrowlrInterface;
+use modules\sitemodule\gql\interfaces\PawmateInterface;
 
-class GrowlrType extends ObjectType
+class PawmateType extends ObjectType
 {
     public function __construct(array $config)
     {
         $config['interfaces'] = [
-            GrowlrInterface::getType(),
+            PawmateInterface::getType(),
         ];
 
         parent::__construct($config);

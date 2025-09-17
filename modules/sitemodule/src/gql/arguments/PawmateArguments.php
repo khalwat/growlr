@@ -5,7 +5,7 @@ namespace modules\sitemodule\gql\arguments;
 use craft\gql\base\Arguments;
 use GraphQL\Type\Definition\Type;
 
-class GrowlrArguments extends Arguments
+class PawmateArguments extends Arguments
 {
     /**
      * @inheritdoc

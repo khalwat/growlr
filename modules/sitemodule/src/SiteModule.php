@@ -21,9 +21,9 @@ use craft\services\Gql;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
 use modules\sitemodule\assetbundles\sitemodule\SiteModuleAsset;
-use modules\sitemodule\gql\interfaces\GrowlrInterface;
-use modules\sitemodule\gql\queries\GrowlrQuery;
-use modules\sitemodule\gql\resolvers\GrowlrBestMatchesResolver;
+use modules\sitemodule\gql\interfaces\PawmateInterface;
+use modules\sitemodule\gql\queries\PawmateQueries;
+use modules\sitemodule\gql\resolvers\PawmateBestMatchesResolver;
 use modules\sitemodule\services\Helper;
 use modules\sitemodule\variables\SiteVariable;
 use yii\base\Event;
@@ -136,7 +136,7 @@ class SiteModule extends Module
                     'Gql::EVENT_REGISTER_GQL_TYPES',
                     __METHOD__
                 );
-                $event->types[] = GrowlrInterface::class;
+                $event->types[] = PawmateInterface::class;
             }
         );
         // Handler: Gql::EVENT_REGISTER_GQL_QUERIES
@@ -148,7 +148,7 @@ class SiteModule extends Module
                     'Gql::EVENT_REGISTER_GQL_QUERIES',
                     __METHOD__
                 );
-                $queries = GrowlrQuery::getQueries();
+                $queries = PawmateQueries::getQueries();
                 foreach ($queries as $key => $value) {
                     $event->queries[$key] = $value;
                 }
@@ -163,8 +163,8 @@ class SiteModule extends Module
                     'Gql::EVENT_REGISTER_GQL_SCHEMA_COMPONENTS',
                     __METHOD__
                 );
-                $label = Craft::t('site-module', 'Growlr');
-                $event->queries[$label]['growlr.all:read'] = ['label' => Craft::t('site-module', 'Query Growlr data')];
+                $label = Craft::t('site-module', 'Pawmate');
+                $event->queries[$label]['pawmate.all:read'] = ['label' => Craft::t('site-module', 'Query Pawmate match data')];
             }
         );
         Craft::info(
@@ -176,7 +176,7 @@ class SiteModule extends Module
             __METHOD__
         );
 
-        $result = GrowlrBestMatchesResolver::resolve('woof', [
+        $result = PawmateBestMatchesResolver::resolve('woof', [
             'affection' => 9,
             'activityLevel' => 7,
             'bodySize' => 3,

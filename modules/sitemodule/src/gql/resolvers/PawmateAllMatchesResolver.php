@@ -6,10 +6,10 @@ use craft\gql\base\Resolver;
 use GraphQL\Type\Definition\ResolveInfo;
 use modules\sitemodule\helpers\Pawmate as PawmateHelper;
 
-class GrowlrBestMatchesResolver extends Resolver
+class PawmateAllMatchesResolver extends Resolver
 {
     public static function resolve(mixed $source, array $arguments, mixed $context, ?ResolveInfo $resolveInfo): mixed
     {
-        return PawmateHelper::getPawmateMatches($arguments, 1);
+        return PawmateHelper::getPawmateMatches($arguments, null);
     }
 }

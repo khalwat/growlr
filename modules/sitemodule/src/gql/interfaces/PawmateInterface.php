@@ -6,13 +6,13 @@ use craft\gql\base\InterfaceType as BaseInterfaceType;
 use craft\gql\GqlEntityRegistry;
 use GraphQL\Type\Definition\InterfaceType;
 use GraphQL\Type\Definition\Type;
-use modules\sitemodule\gql\types\generators\GrowlrGenerator;
+use modules\sitemodule\gql\types\generators\PawmateGenerator;
 
-class GrowlrInterface extends BaseInterfaceType
+class PawmateInterface extends BaseInterfaceType
 {
     public static function getTypeGenerator(): string
     {
-        return GrowlrGenerator::class;
+        return PawmateGenerator::class;
     }
 
     public static function getType($fields = null): Type
@@ -24,12 +24,12 @@ class GrowlrInterface extends BaseInterfaceType
         $type = GqlEntityRegistry::createEntity(self::class, new InterfaceType([
             'name' => static::getName(),
             'fields' => self::class . '::getFieldDefinitions',
-            'description' => 'This is the interface implemented by Growlr.',
+            'description' => 'This is the interface implemented by Growlr for Pawmates.',
             'resolveType' => function(array $value) {
-                return GqlEntityRegistry::getEntity(GrowlrGenerator::getName());
+                return GqlEntityRegistry::getEntity(PawmateGenerator::getName());
             },
         ]));
-        GrowlrGenerator::generateTypes();
+        PawmateGenerator::generateTypes();
 
         return $type;
     }
@@ -39,7 +39,7 @@ class GrowlrInterface extends BaseInterfaceType
      */
     public static function getName(): string
     {
-        return 'GrowlrInterface';
+        return 'PawmateInterface';
     }
 
     /**
