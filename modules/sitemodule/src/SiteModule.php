@@ -15,19 +15,15 @@ use craft\events\RegisterGqlQueriesEvent;
 use craft\events\RegisterGqlSchemaComponentsEvent;
 use craft\events\RegisterGqlTypesEvent;
 use craft\events\RegisterTemplateRootsEvent;
-use craft\events\TemplateEvent;
 use craft\i18n\PhpMessageSource;
 use craft\services\Gql;
-use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
 use modules\sitemodule\assetbundles\sitemodule\SiteModuleAsset;
 use modules\sitemodule\gql\interfaces\PawmateInterface;
 use modules\sitemodule\gql\queries\PawmateQueries;
-use modules\sitemodule\gql\resolvers\PawmateBestMatchesResolver;
 use modules\sitemodule\services\Helper;
 use modules\sitemodule\variables\SiteVariable;
 use yii\base\Event;
-use yii\base\InvalidConfigException;
 use yii\base\Module;
 
 /**
@@ -36,8 +32,6 @@ use yii\base\Module;
  * @author    nystudio107
  * @package   SiteModule
  * @since     1.0.0
- *
- * @property Helper helper
  */
 class SiteModule extends Module
 {
@@ -94,39 +88,6 @@ class SiteModule extends Module
         parent::init();
         self::$instance = $this;
 
-        // Register our components
-        $this->setComponents([
-            'helper' => [
-                'class' => Helper::class,
-            ]
-        ]);
-        // Register our variables
-        Event::on(
-            CraftVariable::class,
-            CraftVariable::EVENT_INIT,
-            static function(Event $event) {
-                /** @var CraftVariable $variable */
-                $variable = $event->sender;
-                $variable->set('site', SiteVariable::class);
-            }
-        );
-        // Register our Asset bundle for CP requests
-        if (Craft::$app->getRequest()->getIsCpRequest()) {
-            Event::on(
-                View::class,
-                View::EVENT_BEFORE_RENDER_TEMPLATE,
-                static function(TemplateEvent $event) {
-                    try {
-                        Craft::$app->getView()->registerAssetBundle(SiteModuleAsset::class);
-                    } catch (InvalidConfigException $e) {
-                        Craft::error(
-                            'Error registering AssetBundle - ' . $e->getMessage(),
-                            __METHOD__
-                        );
-                    }
-                }
-            );
-        }
         // Handler: Gql::EVENT_REGISTER_GQL_TYPES
         Event::on(
             Gql::class,
@@ -175,17 +136,5 @@ class SiteModule extends Module
             ),
             __METHOD__
         );
-
-        $result = PawmateBestMatchesResolver::resolve('woof', [
-            'affection' => 9,
-            'activityLevel' => 7,
-            'bodySize' => 3,
-            'hairyness' => 3,
-            'diet' => 7,
-            'attractiveness' => 3,
-        ], 'woof', null);
     }
-
-    // Protected Methods
-    // =========================================================================
 }
