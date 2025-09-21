@@ -11,7 +11,10 @@
         <slot name="message"/>
       </p>
       <div class="flex justify-right items-right">
-        <button class="mt-1 ml-auto px-2 border rounded-lg" @click="emit('confirm')">
+        <button
+          class="text-white bg-blue-500 hover:bg-blue-800 font-medium rounded-full text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
+          @click="emit('confirm')"
+        >
           {{ buttonTitle }}
         </button>
       </div>

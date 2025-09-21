@@ -6,6 +6,8 @@
       :marks="props.marks"
       :max=10
       :min=0
+      :process-style="{backgroundColor: '#2b7fff'}"
+      :tooltip-style="{backgroundColor: '#2b7fff'}"
       tooltip="always"
       @change="emit('attribute-slider-changed')"
     />
