@@ -40,6 +40,7 @@
         />
         <ActionButton
           v-show="!expertMode"
+          :pro-mode="proMode"
           @find-purrfect-pawmate="debouncedFindPurrfectPawmate"
         />
         <UpgradeToProButton

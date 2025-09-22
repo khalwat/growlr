@@ -29,6 +29,9 @@ import {ref} from "vue";
 
 const show = ref(false);
 const emit = defineEmits(['find-purrfect-pawmate']);
+const props = defineProps<{
+  proMode: boolean,
+}>();
 
 function confirm() {
   show.value = false;
@@ -36,6 +39,10 @@ function confirm() {
 }
 
 function handleClick() {
-  show.value = true;
+  if (props.proMode) {
+    confirm()
+  } else {
+    show.value = true;
+  }
 }
 </script>
