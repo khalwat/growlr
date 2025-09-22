@@ -72,11 +72,13 @@ onMounted(() => {
 })
 
 onUpdated(() => {
-  wheelEl.value.startRotate()
+  if (spinning.value) {
+    wheelEl.value.startRotate()
+  }
 })
 
 function onWheelRotateStart() {
-  if (wheelSpinAudio.value) {
+  if (wheelSpinAudio.value && spinning.value) {
     wheelSpinAudio.value.currentTime = 0;
     wheelSpinAudio.value.play();
     wheelSpinAudio.value.addEventListener("ended", () => {
@@ -85,7 +87,9 @@ function onWheelRotateStart() {
 }
 
 function onRotateEnd(prize: WheelPrize) {
-  spinning.value = false;
+  setTimeout(() => {
+    spinning.value = false;
+  }, 500)
 }
 
 function onChangePrize(id: number) {
