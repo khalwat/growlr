@@ -15,7 +15,7 @@
     "integrity": "sha384-/ctXxMa7Wv/UmDh+uGGq9djUcHkk3q387EJCdBJQA7H1AyLWWVmfXdlluL44XOxd"
   },
   "src/js/pawmate-finder.ts": {
-    "file": "assets/pawmate-finder-CvMyYax3.js",
+    "file": "assets/pawmate-finder-CpswFgLz.js",
     "name": "pawmate-finder",
     "src": "src/js/pawmate-finder.ts",
     "isEntry": true,
@@ -25,7 +25,7 @@
     "css": [
       "assets/pawmate-finder-ARd6JZiL.css"
     ],
-    "integrity": "sha384-1QLgeSP+fitBd16mFk/HigPljXp/VrGVHdCatohuJ76iKjMbqFE2bPCbixIqXffQ"
+    "integrity": "sha384-KL0m1beUNkqeK445zlXKIcee7b1y+MRw7B+euOKQghR8lYdnvdgo33rea4mFvT5Y"
   },
   "src/js/users-menu.ts": {
     "file": "assets/users-menu-RV5LwjXN.js",
