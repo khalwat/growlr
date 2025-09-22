@@ -84,6 +84,9 @@ const appState = computed(() => {
   if (proMode.value) {
     return 'proMode';
   }
+  if (expertMode.value) {
+    return 'pawmate';
+  }
   if (spinning.value && !isEmptyObject(allPawmates)) {
     return 'spinningWheel';
   }
