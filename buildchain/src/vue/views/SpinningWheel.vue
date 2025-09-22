@@ -62,7 +62,6 @@ if (allPawmates && allPawmates.value) {
     return acc;
   }, []);
 }
-console.log(prizesData);
 
 const prizeRes = computed(() => {
   return prizesData.find(item => item.id === prizeId.value) || prizesData[0]
