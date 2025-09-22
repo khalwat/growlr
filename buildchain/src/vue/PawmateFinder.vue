@@ -2,28 +2,28 @@
   <div class="min-h-screen h-full">
     <div v-if="!isEmptyObject(user)" class="flex pt-8">
       <div class="w-2/3">
-        <div v-if="proMode">
+        <div v-if="appState === 'proMode'">
           <PawmateCharts v-model="allPawmates"/>
         </div>
         <div v-else>
           <UserProfile
-            v-if="isEmptyObject(pawmates)"
+            v-if="appState === 'userProfile'"
             v-model="user"
           />
-          <div v-if="spinning || !isEmptyObject(pawmates)"
-               :class="{ flipped: !isEmptyObject(pawmates) && !spinning }"
+          <div v-if="appState === 'spinningWheel' || appState === 'pawmate'"
+               :class="{ flipped: appState === 'pawmate' }"
                class="flip-container">
             <div class="flipper">
               <div class="front w-full">
                 <SpinningWheel
-                  v-if="spinning && !isEmptyObject(allPawmates)"
+                  v-if="appState === 'spinningWheel'"
                   v-model:pawmates="allPawmates"
                   v-model:spinning="spinning"
                 />
               </div>
               <div class="back w-full">
                 <PawmateProfile
-                  v-if="!spinning && !isEmptyObject(pawmates)"
+                  v-if="appState === 'pawmate'"
                   v-model="pawmates"
                   :expert-mode="expertMode"
                   :user="user"
@@ -55,7 +55,7 @@
 
 <script lang="ts" setup>
 import {executeQuery} from '../js/gql-query';
-import {reactive, ref} from "vue";
+import {computed, reactive, ref} from "vue";
 import {AxiosResponse} from "axios";
 import PawmateSliders from "./views/PawmateSliders.vue";
 import ActionButton from "./ui-elements/buttons/ActionButton.vue";
@@ -80,6 +80,18 @@ const debouncedFindPurrfectPawmate = debounce(findPurrfectPawmate, 50);
 let user: GrowlrUser = reactive({});
 let pawmates: GrowlrPawmate[] = reactive([]);
 let allPawmates: GrowlrPawmate[] = reactive([]);
+const appState = computed(() => {
+  if (proMode.value) {
+    return 'proMode';
+  }
+  if (spinning.value && !isEmptyObject(allPawmates)) {
+    return 'spinningWheel';
+  }
+  if (!isEmptyObject(pawmates)) {
+    return 'pawmate';
+  }
+  return 'userProfile';
+});
 
 function isEmptyObject(obj: Object) {
   return Object.keys(obj).length === 0;
