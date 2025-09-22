@@ -116,17 +116,17 @@ function findPurrfectPawmate() {
     hairyness: user.hairyness,
     diet: user.diet
   };
+  executeQuery(PawmateBestQuery, vars, (response: AxiosResponse<GrowlrPawmateBestResponse>) => {
+    if (response.data) {
+      pawmates.length = 0;
+      Object.assign(pawmates, response.data.data.pawmateBestMatches)
+    }
+  });
   executeQuery(PawmateAllQuery, vars, (response: AxiosResponse<GrowlrPawmateAllResponse>) => {
     if (response.data) {
       allPawmates.length = 0;
       Object.assign(allPawmates, response.data.data.pawmateAllMatches)
       spinning.value = true;
-    }
-  });
-  executeQuery(PawmateBestQuery, vars, (response: AxiosResponse<GrowlrPawmateBestResponse>) => {
-    if (response.data) {
-      pawmates.length = 0;
-      Object.assign(pawmates, response.data.data.pawmateBestMatches)
     }
   });
 }
