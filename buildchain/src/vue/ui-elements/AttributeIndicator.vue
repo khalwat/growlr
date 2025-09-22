@@ -1,5 +1,5 @@
 <template>
-  <div v-if="value" class="py-2">
+  <div v-if="value != null" class="py-2">
     <div class="flex justify-between mb-1">
       <span class="text-base font-medium black dark:text-white">{{ title }}</span>
       <span class="text-sm font-medium text-black dark:text-white">{{ value }}</span>
