@@ -62,6 +62,7 @@ if (allPawmates && allPawmates.value) {
     return acc;
   }, []);
 }
+console.log(prizesData);
 
 const prizeRes = computed(() => {
   return prizesData.find(item => item.id === prizeId.value) || prizesData[0]
@@ -72,13 +73,11 @@ onMounted(() => {
 })
 
 onUpdated(() => {
-  if (spinning.value) {
-    wheelEl.value.startRotate()
-  }
+  wheelEl.value.startRotate()
 })
 
 function onWheelRotateStart() {
-  if (wheelSpinAudio.value && spinning.value) {
+  if (wheelSpinAudio.value) {
     wheelSpinAudio.value.currentTime = 0;
     wheelSpinAudio.value.play();
     wheelSpinAudio.value.addEventListener("ended", () => {

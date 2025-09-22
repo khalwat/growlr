@@ -116,11 +116,11 @@ function findPurrfectPawmate() {
     hairyness: user.hairyness,
     diet: user.diet
   };
-  spinning.value = true;
   executeQuery(PawmateAllQuery, vars, (response: AxiosResponse<GrowlrPawmateAllResponse>) => {
     if (response.data) {
       allPawmates.length = 0;
       Object.assign(allPawmates, response.data.data.pawmateAllMatches)
+      spinning.value = true;
     }
   });
   executeQuery(PawmateBestQuery, vars, (response: AxiosResponse<GrowlrPawmateBestResponse>) => {
